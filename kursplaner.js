@@ -1,12 +1,17 @@
-        // Define an empty array to store the strings
-        const stringsArray = [];
-        
-        // Get a reference to the button element
-        const button = document.querySelector('button');
-        
-        // Add an event listener to the button
-        button.addEventListener('click', function() {
-            // Append the predetermined strings to the array
-            stringsArray.push('string1', 'string2', 'string3');
-            console.log(stringsArray);
-        });
+// Define an empty array to store the strings
+const Faecherarray = [];
+
+// Get a reference to the button element
+// Get all the buttons with the subject-button class
+const buttons = document.querySelectorAll('.subject-button');
+
+// Add event listeners to the buttons for each subject
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        const subject = button.dataset.subject;
+        Faecherarray.push(subject);
+        console.log(Faecherarray);
+        button.disabled = true;
+    });
+});
+
