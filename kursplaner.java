@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class kursplaner {
+public class Kursplaner {
     public static void main(String[] args) {
         
         // String a = "De,2AF";
@@ -52,6 +52,12 @@ public class kursplaner {
 
             String Q3 = sc.next();
             String[] ary2 = Q3.split(",");
+            String[] ary24 = Arrays.copyOfRange(ary2, 0, 4);
+            // System.out.println(Arrays.toString(ary14));
+            String[] ary25 = Arrays.copyOfRange(ary2, 0, 5);
+
+            System.out.println(Arrays.toString(ary15));
+            System.out.println(Arrays.toString(ary25));
 
             // System.out.println(Arrays.toString(ary1));
             // System.out.println(Arrays.toString(ary2));
@@ -59,7 +65,7 @@ public class kursplaner {
 
             //--------------------------------------------------------------------------------------------------------            
             //Leistungskurse gleich? LK1 und LK2 unterscheiden sich voneinander?
-            if (ary1[0].equals(ary2[0]) && ary1[1].equals(ary2[1]) && ary1[2].equals(ary2[2]) && ary1[3].equals(ary2[3]) && ary1[4].equals(ary2[4])&& !ary1[0].equals(ary1[1]) && !ary2[0].equals(ary2[1])) {
+            if (Arrays.equals(ary15,ary25)) {
                 a++;
             }else{
                 System.out.println("LK1, LK2, 3.-5.PK muessen in Jahren 11 und 12 gleich sein, nicht geschafft");
