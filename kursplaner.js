@@ -2,7 +2,7 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Musik'];
+const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik'];
 let faecher12_0_5 = faecher12.slice(0, 5);
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -78,4 +78,32 @@ inputFinishedButton.addEventListener('click', function() {
         console.log("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LK sein");
     }
     
+    // ------------------
+    // Regel 3...
+    
+    let MaDe1 = 0;
+    for (let s of faecher11) {
+        if (s === "Mathematik" || s === "Deutsch") {
+            MaDe1++;
+            if (MaDe1 === 2) {
+                for (let sb of faecher12) {
+                    if (sb === "Mathematik" || sb === "Deutsch") {
+                        MaDe1++;
+                    }
+                }
+            }
+        }
+    }
+    
+    if (MaDe1 === 4) {
+        regel3 = true;
+        console.log("regel3 = true");
+    } else {
+        console.log("Mathe und Deutsch müssen belegt werden, nicht geschafft");
+    }
+    
+    // ------------------
+    // Regel 4...
+
+
 });
