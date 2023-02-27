@@ -423,6 +423,32 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     // Regel 10...
-
     
+    let Pruef151 = 0;
+    let Pruef152 = 0;
+    let Pruef153 = 0;
+    
+    for (let s of faecher11_0_5) {
+        if (s === "Deutsch" || s === "Englisch" || s === "Franzoesisch" ||  s === "Latein" || s=== "Spanisch" ||  s === "Japanisch" || s === "Musik" || s === "BildendeKunst" || s === "DarstellendesSpielTheater") {
+            Pruef151++;
+        }
+        if (s === "Politikwissenschaften" || s === "Geschichte" || s === "Geografie" || s === "Wirtschaftswissenschaften" || s === "Philosophie") {
+            Pruef152++;
+        }
+        if (s === "Mathematik" || s === "Physik" || s === "Chemie" || s === "Biologie" || s === "Informatik") {
+            Pruef153++;
+        }
+    }
+    
+    if (Pruef151 >= 1 && Pruef152 >= 1 && Pruef153 >= 1) {
+        regel10 = true;
+        console.log("regel10 = true");
+    } else {
+        console.log("Alle drei Af muessen von LK und 3,4,5 PK belegt werden, geschafft");
+    }
+    
+    // ------------------
+    // Regel 11...
+
+
 });
