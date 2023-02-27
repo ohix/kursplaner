@@ -2,7 +2,7 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik','Politikwissenschaften','Geschichte','Chemie','Sport'];
+const faecher12 = ['Deutsch','Englisch','Mathematik','Politikwissenschaften','Geschichte','Chemie','Sport'];
 let faecher12_0_5 = faecher12.slice(0, 5);
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -490,5 +490,15 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     
-
+    if (regel1 && regel2 && regel3 && regel4 && regel5 && regel6 && regel7 && regel8 && regel9 && regel10 && regel11 && regel12) {
+        console.log("    !!! ALLES GESCHAFFT !!!   ");
+        console.log("!!! Deine Wahl ist erlaubt !!!");
+    } else {
+        console.log("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
+    }
+    
+    // ------------------
+    
+    // ------------------
+    
 });
