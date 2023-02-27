@@ -2,7 +2,7 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik','Politikwissenschaften','Geschichte','Chemie'];
+const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik','Politikwissenschaften','Geschichte','Chemie','Sport'];
 let faecher12_0_5 = faecher12.slice(0, 5);
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -344,8 +344,31 @@ inputFinishedButton.addEventListener('click', function() {
         console.log("Eine Naturwissenschaft muss über 4 Semester belegt werden, nicht geschafft");
         console.log("Bei der Wahl von Biologie muessen mindestens zusaetzlich 2 Semester Chemie oder Physik belegt werden");
     }
-
+    
     // ------------------
     // Regel 7...
+    
+    let FachSport = 0;
+    // Einen Sport Kurs gewählt?
+    faecher11.forEach(s => {
+        if (s === "Sport") {
+            FachSport++;
+            faecher12.forEach(sb => {
+                if (sb === "Sport") {
+                    FachSport++;
+                }
+            });
+        }
+    });
+    
+    if (FachSport === 2) {
+        regel7 = true;
+        console.log("regel7 = true")
+    } else {
+        console.log("Sport Praxis muss über 4 Semester belegt werden, nicht geschafft");
+    }
+
+    // ------------------
+    // Regel 8...
 
 });
