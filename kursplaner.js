@@ -350,16 +350,16 @@ inputFinishedButton.addEventListener('click', function() {
     
     let FachSport = 0;
     // Einen Sport Kurs gewählt?
-    faecher11.forEach(s => {
+    for (let s of faecher11) {
         if (s === "Sport") {
             FachSport++;
-            faecher12.forEach(sb => {
+            for (let sb of faecher12) {
                 if (sb === "Sport") {
                     FachSport++;
                 }
-            });
+            }
         }
-    });
+    }
     
     if (FachSport === 2) {
         regel7 = true;
@@ -372,17 +372,17 @@ inputFinishedButton.addEventListener('click', function() {
     // Regel 8...
     
     let nostsp = 0;
-    faecher11.forEach(function(s) {
+    for (let s of faecher11) {
         if (s !== "SportTheorie") {
             nostsp++;
         }
-    });
+    }
     
-    faecher12.forEach(function(sb) {
-        if (sb !== "StudiumBeruf") {
+    for (let s of faecher12) {
+        if (s !== "StudiumBeruf") {
             nostsp++;
         }
-    });
+    }
     
     if (nostsp === faecher11.length + faecher12.length) {
         regel8 = true;
