@@ -472,4 +472,23 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     // Regel 12...
     
+    let Ges2Sem = 0;
+    for (let s of faecher12) {
+        if (s === "Geschichte") {
+            Ges2Sem++;
+        }
+    }
+    
+    if (Ges2Sem === 1) {
+        regel12 = true;
+        console.log("regel12 = true");
+    } else {
+        console.log("Geschichte muss in der 12. Klasse belegt werden, geschafft");
+    }
+    
+    // ------------------
+    
+    // ------------------
+    
+
 });
