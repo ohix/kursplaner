@@ -19,6 +19,8 @@ buttons.forEach((button, index) => {
         //     faecher11_0_5 = faecher11.slice(0, 5);
         //     console.log(faecher11_0_5);
         // }
+        const arrayDisplay = document.getElementById('array-display');
+        arrayDisplay.textContent = faecher11.join(', ');
     });
 });
 
@@ -291,6 +293,8 @@ inputFinishedButton.addEventListener('click', function() {
         console.log("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
     }
     
+    // ------------------
+    // Regel 6...
     
-    
+
 });
