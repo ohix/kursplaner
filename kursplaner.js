@@ -393,6 +393,36 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     // Regel 9...
+    
+    let Pruef141 = 0;
+    let Pruef142 = 0;
+    let Pruef143 = 0;
+    let Pruef144 = 0;
+    
+    for (let s of faecher11_0_4) {
+        if (s === "Deutsch") {
+            Pruef141++;
+        }
+        if (s === "Mathematik") {
+            Pruef142++;
+        }
+        if (s === "Spanisch") {
+            Pruef143++;
+        }
+        if (s === "Englisch") {
+            Pruef144++;
+        }
+    }
+    
+    if ((Pruef141 + Pruef142 + Pruef143) >= 2 || (Pruef141 + Pruef142 + Pruef144) >= 2) {
+        regel9 = true;
+        console.log("regel9 = true");
+    } else {
+        console.log("2 von 3 folgenden Faechern müssen als LK und 3., 4. PF belegt werden: Mathe, Deutsch und Fremdsprache, nicht geschafft");
+    }
+    
+    // ------------------
+    // Regel 10...
 
     
 });
