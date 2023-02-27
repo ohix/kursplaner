@@ -367,8 +367,32 @@ inputFinishedButton.addEventListener('click', function() {
     } else {
         console.log("Sport Praxis muss über 4 Semester belegt werden, nicht geschafft");
     }
-
+    
     // ------------------
     // Regel 8...
+    
+    let nostsp = 0;
+    faecher11.forEach(function(s) {
+        if (s !== "SportTheorie") {
+            nostsp++;
+        }
+    });
+    
+    faecher12.forEach(function(sb) {
+        if (sb !== "StudiumBeruf") {
+            nostsp++;
+        }
+    });
+    
+    if (nostsp === faecher11.length + faecher12.length) {
+        regel8 = true;
+        console.log("regel8 = true");
+    } else {
+        console.log("Studium und Beruf darf nur im Semester 1. und 2. und SportTheorie darf nur im 3. und 4. belegt werden, nicht geschafft");
+    }
+    
+    // ------------------
+    // Regel 9...
 
+    
 });
