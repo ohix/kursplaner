@@ -104,6 +104,66 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     // Regel 4...
+    
+    let FremdEn = 0;
+    let FremdSp = 0;
+    let FremdLa = 0;
+    let FremdFr = 0;
+    let FremdJa = 0;
+    
+    // Eine Fremdsprache in Q1, 2 und Q3, 4 belegt?
+    for (let s of faecher11) {
+        if (s === "Spanisch") {
+            FremdSp++;
+            for (let sb of faecher12) {
+                if (sb === "Spanisch") {
+                    FremdSp++;
+                }
+            }
+        }
+        if (s === "Englisch") {
+            FremdEn++;
+            for (let sb of faecher12) {
+                if (sb === "Englisch") {
+                    FremdEn++;
+                }
+            }
+        }
+        if (s === "Latein") {
+            FremdLa++;
+            for (let sb of faecher12) {
+                if (sb === "Latein") {
+                    FremdLa++;
+                }
+            }
+        }
+        if (s === "Französisch") {
+            FremdFr++;
+            for (let sb of faecher12) {
+                if (sb === "Französisch") {
+                    FremdFr++;
+                }
+            }
+        }
+        if (s === "Japanisch") {
+            FremdJa++;
+            for (let sb of faecher12) {
+                if (sb === "Japanisch") {
+                    FremdJa++;
+                }
+            }
+        }
+    }
+    
+    if (FremdSp === 2 || FremdEn === 2 || FremdLa === 2 || FremdFr === 2 || FremdJa === 2) {
+        regel4 = true;
+        console.log("regel4 = true")
+    } else {
+        console.log("Es muss eine Fremdsprache über 4 Semester belegt werden, nicht geschafft");
+    }
+
+    // ------------------
+    // Regel 5...
 
 
 });
