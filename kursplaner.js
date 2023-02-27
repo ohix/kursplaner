@@ -449,6 +449,27 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     // Regel 11...
-
-
+    
+    let KunstlerFach = 0;
+    for (let s of faecher11) {
+        if (s === "Musik" || s === "BildendeKunst" || s === "DarstellendesSpielTheater") {
+            KunstlerFach++;
+        }
+    }
+    for (let s of faecher12) {
+        if (s === "Musik" || s === "BildendeKunst" || s === "DarstellendesSpielTheater") {
+            KunstlerFach++;
+        }
+    }
+    
+    if (KunstlerFach >= 1) {
+        regel11 = true;
+        console.log("regel11 = true");
+    } else {
+        console.log("Ein Kunstlerisches Fach muss 2 Semester belegt werden, nicht geschafft");
+    }
+    
+    // ------------------
+    // Regel 12...
+    
 });
