@@ -2,7 +2,7 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik','Politikwissenschaften','Geschichte'];
+const faecher12 = ['Deutsch','Englisch', 'Latein', 'Spanisch', 'Japanisch', 'Mathematik','Politikwissenschaften','Geschichte','Chemie'];
 let faecher12_0_5 = faecher12.slice(0, 5);
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -296,5 +296,56 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     // Regel 6...
     
+    let FachBi = 0;
+    let FachCh = 0;
+    let FachPhy = 0;
+    let BiPhCh = 0;
+    // Eine Naturwissenschaft 4 Semester belegt?
+    for (let s of faecher11) {
+        if (s === "Biologie") {
+            FachBi++;
+            for (let sb of faecher12) {
+                if (sb === "Biologie") {
+                    FachBi++;
+                    for (let ssb of faecher11) {
+                        if (ssb === "Physik" || ssb === "Chemie") {
+                            BiPhCh++;
+                        }
+                    }
+                    for (let sbb of faecher12) {
+                        if (sbb === "Physik" || sbb === "Chemie") {
+                            BiPhCh++;
+                        }
+                    }
+                }
+            }
+        }
+        if (s === "Chemie") {
+            FachCh++;
+            for (let sb of faecher12) {
+                if (sb === "Chemie") {
+                    FachCh++;
+                }
+            }
+        }
+        if (s === "Physik") {
+            FachPhy++;
+            for (let sb of faecher12) {
+                if (sb === "Physik") {
+                    FachPhy++;
+                }
+            }
+        }
+    }
+    if ((FachBi === 2 && BiPhCh >= 1) || FachPhy === 2 || FachCh === 2) {
+        regel6 = true;
+        console.log("regel6 = true")
+    } else {
+        console.log("Eine Naturwissenschaft muss über 4 Semester belegt werden, nicht geschafft");
+        console.log("Bei der Wahl von Biologie muessen mindestens zusaetzlich 2 Semester Chemie oder Physik belegt werden");
+    }
+
+    // ------------------
+    // Regel 7...
 
 });
