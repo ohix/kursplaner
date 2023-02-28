@@ -2,50 +2,178 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Chemie','Biologie','Mathematik','Englisch','Geschichte','Geografie','Musik','Latein','Sport','Deutsch'];
-let faecher12_0_5 = faecher12.slice(0, 5);
+const faecher12 = [];
+let faecher12_0_5 = [];
 
 const buttons = document.querySelectorAll('.subject-button');
 const inputFinishedButton = document.getElementById('input-finished');
 
-// Add event listeners to the buttons for each subject
-buttons.forEach((button, index) => {
-    button.addEventListener('click', function() {
-        const subject = button.dataset.subject;
-        faecher11.push(subject);
+const Eingabe11 = document.getElementById('Eingabe11');
+const Eingabe12 = document.getElementById('Eingabe12');
+
+let activeArray11 = null;
+let activeArray12 = null;
+
+// Versuch Eingabe für 11. Klasse
+Eingabe11.addEventListener('click', function() {
+    buttons.forEach(button => {
+        button.removeEventListener('click', addToFaecher12);
+        button.addEventListener('click', addToFaecher11);
+        activeArray11 = true;
+        activeArray12 = false;
+    });
+    
+    
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const subject = button.dataset.subject;
+    //         faecher11.push(subject);
+    //         console.log(faecher11);
+    //         button.disabled = true;
+    //         const arrayDisplay11 = document.getElementById('array-display11');
+    //         arrayDisplay11.textContent = faecher11.join(', ');
+    //     });
+    // });
+    
+    // remove last element of array
+    const removeBtn = document.getElementById('remove-btn');
+    removeBtn.addEventListener('click', function() {
+        faecher11.pop();
         console.log(faecher11);
-        button.disabled = true;
-        // if (index == 4) {
-        //     faecher11_0_5 = faecher11.slice(0, 5);
-        //     console.log(faecher11_0_5);
-        // }
-        const arrayDisplay = document.getElementById('array-display');
+        buttons.forEach(button => {
+            if (!faecher11.includes(button.dataset.subject)) {
+                button.disabled = false;
+            }
+        });
+        const arrayDisplay = document.getElementById('array-display11');
         arrayDisplay.textContent = faecher11.join(', ');
     });
-});
-
-const removeBtn = document.getElementById('remove-btn');
-removeBtn.addEventListener('click', function() {
-    faecher11.pop();
-    console.log(faecher11);
-    buttons.forEach(button => {
-        if (!faecher11.includes(button.dataset.subject)) {
-            button.disabled = false;
+    
+    // clear elements of array
+    const clearBtn = document.getElementById('clear-btn');
+    clearBtn.addEventListener('click', function() {
+        if (activeArray11 === true && activeArray12 === false) {
+            faecher11.length = 0;
+            buttons.forEach(button => {
+                button.disabled = false;
+            });
+            const arrayDisplay = document.getElementById('array-display11');
+            arrayDisplay.textContent = '';
         }
     });
-    const arrayDisplay = document.getElementById('array-display');
-    arrayDisplay.textContent = faecher11.join(', ');
 });
 
-const clearBtn = document.getElementById('clear-btn');
-clearBtn.addEventListener('click', function() {
-    faecher11.length = 0;
+//----------------------------------------------------------------------------------------
+
+// Versuch Eingabe für 12. Klasse
+Eingabe12.addEventListener('click', function() {
     buttons.forEach(button => {
-        button.disabled = false;
+        button.removeEventListener('click', addToFaecher11);
+        button.addEventListener('click', addToFaecher12);
+        activeArray11 = false;
+        activeArray12 = true;
     });
-    const arrayDisplay = document.getElementById('array-display');
-    arrayDisplay.textContent = '';
+    
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const subject = button.dataset.subject;
+    //         faecher12.push(subject);
+    //         console.log(faecher12);
+    //         button.disabled = true;
+    //         const arrayDisplay12 = document.getElementById('array-display12');
+    //         arrayDisplay12.textContent = faecher12.join(', ');
+    //     });
+    // });
+    
+    // remove last element of array
+    const removeBtn = document.getElementById('remove-btn');
+    removeBtn.addEventListener('click', function() {
+        faecher12.pop();
+        console.log(faecher12);
+        buttons.forEach(button => {
+            if (!faecher12.includes(button.dataset.subject)) {
+                button.disabled = false;
+            }
+        });
+        const arrayDisplay12 = document.getElementById('array-display12');
+        arrayDisplay12.textContent = faecher12.join(', ');
+    });
+    
+    //clear elements of array
+    const clearBtn = document.getElementById('clear-btn');
+    clearBtn.addEventListener('click', function() {
+        if (activeArray11 === false && activeArray12 === true) {
+            faecher12.length = 0;
+            buttons.forEach(button => {
+                button.disabled = false;
+            });
+            const arrayDisplay12 = document.getElementById('array-display12');
+            arrayDisplay12.textContent = '';
+        }
+    });
 });
+
+function addToFaecher11() {
+    const subject = this.dataset.subject;
+    faecher11.push(subject);
+    console.log(faecher11);
+    this.disabled = true;
+    const arrayDisplay11 = document.getElementById('array-display11');
+    arrayDisplay11.textContent = faecher11.join(', ');
+}
+
+function addToFaecher12() {
+    const subject = this.dataset.subject;
+    faecher12.push(subject);
+    console.log(faecher12);
+    this.disabled = true;
+    const arrayDisplay12 = document.getElementById('array-display12');
+    arrayDisplay12.textContent = faecher12.join(', ');
+}
+
+
+//----------------------------------------------------------------------------------------
+
+// // Add event listeners to the buttons for each subject
+// buttons.forEach((button, index) => {
+//     button.addEventListener('click', function() {
+//         const subject = button.dataset.subject;
+//         faecher11.push(subject);
+//         console.log(faecher11);
+//         button.disabled = true;
+//         // if (index == 4) {
+//         //     faecher11_0_5 = faecher11.slice(0, 5);
+//         //     console.log(faecher11_0_5);
+//         // }
+//         const arrayDisplay = document.getElementById('array-display');
+//         arrayDisplay.textContent = faecher11.join(', ');
+//     });
+// });
+
+// // remove last element of array
+// const removeBtn = document.getElementById('remove-btn');
+// removeBtn.addEventListener('click', function() {
+//     faecher11.pop();
+//     console.log(faecher11);
+//     buttons.forEach(button => {
+//         if (!faecher11.includes(button.dataset.subject)) {
+//             button.disabled = false;
+//         }
+//     });
+//     const arrayDisplay = document.getElementById('array-display');
+//     arrayDisplay.textContent = faecher11.join(', ');
+// });
+
+// // clear elements of array
+// const clearBtn = document.getElementById('clear-btn');
+// clearBtn.addEventListener('click', function() {
+//     faecher11.length = 0;
+//     buttons.forEach(button => {
+//         button.disabled = false;
+//     });
+//     const arrayDisplay = document.getElementById('array-display');
+//     arrayDisplay.textContent = '';
+// });
 
 
 // let faecher11_0_4 = faecher11.slice(0, 5);
@@ -67,24 +195,19 @@ let regel10 = false;
 let regel11 = false;
 let regel12 = false;
 
+
+//.---------------------------------------------------------------------------------------
+
+
+
+
 // --- Regeln ---
 
-// Regel 1
-// Die Bedingung "faecher11.length === 5" sollten wir ersetzen durch einen "fertig/bestaetigen" button der Eingabe
-// const intervalId = setInterval(function() {
-//     if (faecher11.length === 5) {
-//         if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
-//             regel1 = true;
-//         } else {
-//             console.log("yeah");
-//         }
-//         clearInterval(intervalId); // Stop the interval
-//     }
-// }, 1000);
-
+// input finish button
 inputFinishedButton.addEventListener('click', function() {
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
+    faecher12_0_5 = faecher12.slice(0, 5);
     
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
