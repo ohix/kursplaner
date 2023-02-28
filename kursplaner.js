@@ -2,7 +2,7 @@
 const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = ['Deutsch','Englisch','Mathematik','Politikwissenschaften','Geschichte','Chemie','Sport'];
+const faecher12 = ['Chemie','Biologie','Mathematik','Englisch','Geschichte','Geografie','Musik','Latein','Sport','Deutsch'];
 let faecher12_0_5 = faecher12.slice(0, 5);
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -23,6 +23,30 @@ buttons.forEach((button, index) => {
         arrayDisplay.textContent = faecher11.join(', ');
     });
 });
+
+const removeBtn = document.getElementById('remove-btn');
+removeBtn.addEventListener('click', function() {
+    faecher11.pop();
+    console.log(faecher11);
+    buttons.forEach(button => {
+        if (!faecher11.includes(button.dataset.subject)) {
+            button.disabled = false;
+        }
+    });
+    const arrayDisplay = document.getElementById('array-display');
+    arrayDisplay.textContent = faecher11.join(', ');
+});
+
+const clearBtn = document.getElementById('clear-btn');
+clearBtn.addEventListener('click', function() {
+    faecher11.length = 0;
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
+    const arrayDisplay = document.getElementById('array-display');
+    arrayDisplay.textContent = '';
+});
+
 
 // let faecher11_0_4 = faecher11.slice(0, 5);
 // let faecher11_0_5 = faecher11.slice(0, 6);
