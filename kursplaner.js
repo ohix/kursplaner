@@ -35,20 +35,6 @@ Eingabe11.addEventListener('click', function() {
     //     });
     // });
     
-    // remove last element of array
-    const removeBtn = document.getElementById('remove-btn');
-    removeBtn.addEventListener('click', function() {
-        faecher11.pop();
-        console.log(faecher11);
-        buttons.forEach(button => {
-            if (!faecher11.includes(button.dataset.subject)) {
-                button.disabled = false;
-            }
-        });
-        const arrayDisplay = document.getElementById('array-display11');
-        arrayDisplay.textContent = faecher11.join(', ');
-    });
-    
     // clear elements of array
     const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
@@ -63,6 +49,31 @@ Eingabe11.addEventListener('click', function() {
     });
 });
 
+// remove last element of array
+const removeBtn = document.getElementById('remove-btn');
+removeBtn.addEventListener('click', function() {
+    if (activeArray11 === true && activeArray12 === false) {
+        faecher11.pop();
+        console.log(faecher11);
+        buttons.forEach(button => {
+            if (!faecher11.includes(button.dataset.subject)) {
+                button.disabled = false;
+            }
+        });
+        const arrayDisplay = document.getElementById('array-display11');
+        arrayDisplay.textContent = faecher11.join(', ');
+    }else{
+        faecher12.pop();
+        console.log(faecher12);
+        buttons.forEach(button => {
+            if (!faecher12.includes(button.dataset.subject)) {
+                button.disabled = false;
+            }
+        });
+        const arrayDisplay12 = document.getElementById('array-display12');
+        arrayDisplay12.textContent = faecher12.join(', ');
+    }
+});
 //----------------------------------------------------------------------------------------
 
 // Versuch Eingabe für 12. Klasse
@@ -84,21 +95,7 @@ Eingabe12.addEventListener('click', function() {
     //         arrayDisplay12.textContent = faecher12.join(', ');
     //     });
     // });
-    
-    // remove last element of array
-    const removeBtn = document.getElementById('remove-btn');
-    removeBtn.addEventListener('click', function() {
-        faecher12.pop();
-        console.log(faecher12);
-        buttons.forEach(button => {
-            if (!faecher12.includes(button.dataset.subject)) {
-                button.disabled = false;
-            }
-        });
-        const arrayDisplay12 = document.getElementById('array-display12');
-        arrayDisplay12.textContent = faecher12.join(', ');
-    });
-    
+      
     //clear elements of array
     const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
@@ -112,6 +109,22 @@ Eingabe12.addEventListener('click', function() {
         }
     });
 });
+
+// remove last element of array
+// const removeBtn = document.getElementById('remove-btn');
+// removeBtn.addEventListener('click', function() {
+//     if (activeArray11 === false && activeArray12 === true) {
+//         faecher12.pop();
+//         console.log(faecher12);
+//         buttons.forEach(button => {
+//             if (!faecher12.includes(button.dataset.subject)) {
+//                 button.disabled = false;
+//             }
+//         });
+//         const arrayDisplay12 = document.getElementById('array-display12');
+//         arrayDisplay12.textContent = faecher12.join(', ');
+//     }
+// });
 
 function addToFaecher11() {
     const subject = this.dataset.subject;
