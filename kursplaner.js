@@ -21,6 +21,12 @@ Eingabe11.addEventListener('click', function() {
         button.addEventListener('click', addToFaecher11);
         activeArray11 = true;
         activeArray12 = false;
+        button.disabled = false;
+        buttons.forEach(button => {
+            if (faecher11.includes(button.dataset.subject)) {
+                button.disabled = true;
+            }
+        });
     });
     
     
@@ -83,6 +89,12 @@ Eingabe12.addEventListener('click', function() {
         button.addEventListener('click', addToFaecher12);
         activeArray11 = false;
         activeArray12 = true;
+        button.disabled = false;
+        buttons.forEach(button => {
+            if (faecher12.includes(button.dataset.subject)) {
+                button.disabled = true;
+            }
+        });
     });
     
     // buttons.forEach(button => {
