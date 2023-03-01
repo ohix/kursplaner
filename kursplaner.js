@@ -16,6 +16,7 @@ let activeArray12 = null;
 
 // Versuch Eingabe für 11. Klasse
 Eingabe11.addEventListener('click', function() {
+    Eingabe12.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher12);
         button.addEventListener('click', addToFaecher11);
@@ -29,6 +30,7 @@ Eingabe11.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
+        Eingabe11.disabled = true;
     });
     
     
@@ -86,6 +88,7 @@ removeBtn.addEventListener('click', function() {
 
 // Versuch Eingabe für 12. Klasse
 Eingabe12.addEventListener('click', function() {
+    Eingabe11.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher11);
         button.addEventListener('click', addToFaecher12);
@@ -99,6 +102,7 @@ Eingabe12.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
+        Eingabe12.disabled = true;
     });
     
     // buttons.forEach(button => {
@@ -126,7 +130,7 @@ Eingabe12.addEventListener('click', function() {
     });
 });
 
-
+// Neustart button
 const clearAll = document.getElementById('clear-All');
 clearAll.addEventListener('click', function() {
     
@@ -139,6 +143,12 @@ clearAll.addEventListener('click', function() {
     arrayDisplay11.textContent = '';
     const arrayDisplay12 = document.getElementById('array-display12');
     arrayDisplay12.textContent = '';
+    buttons.forEach(button => {
+        button.removeEventListener('click', addToFaecher11);
+        button.removeEventListener('click', addToFaecher12);
+    });
+    Eingabe11.disabled = false;
+    Eingabe12.disabled = false;
 });
 
 // remove last element of array
