@@ -365,116 +365,105 @@ inputFinishedButton.addEventListener('click', function() {
     let Fach2Ph = 0;
     let Af268K = 0;
     
-    for (let i = 0; i < faecher11.length; i++) {
-        let s = faecher11[i];
+    for (let s of faecher11) {
         if (s === "Politikwissenschaften") {
-            Fach2PW += 1;
-            for (let j = 0; j < faecher12.length; j++) {
-                let sb = faecher12[j];
+            Fach2PW++;
+            for (let sb of faecher12) {
                 if (sb === "Politikwissenschaften") {
-                    Fach2PW += 1;
-                    for (let k = 0; k < faecher11.length; k++) {
-                        let ssb = faecher11[k];
+                    Fach2PW++;
+                    for (let ssb of faecher11){
                         if (ssb === "Geschichte" || ssb === "Geografie" || ssb === "Wirtschaftswissenschaften" || ssb === "Philosophie" || ssb === "StudiumBeruf") {
-                            Af268K += 1;
+                            Af268K++;
                         }
                     }
-                    for (let l = 0; l < faecher12.length; l++) {
-                        let sbb = faecher12[l];
-                        if (sbb === "Geschichte" || sbb === "Geografie" || sbb === "Wirtschaftswissenschaften" || sbb === "Philosophie") {
-                            Af268K += 1;
+                    for (let ssbb of faecher12) {
+                        if (ssbb === "Geschichte" || ssbb === "Geografie" || ssbb === "Wirtschaftswissenschaften" || ssbb === "Philosophie") {
+                            Af268K++;
                         }
                     }
                 }
             }
         }
+        
         if (s === "Geschichte") {
-            Fach2Ge += 1;
-            for (let j = 0; j < faecher12.length; j++) {
-                let sb = faecher12[j];
+            Fach2Ge++;
+            for (let sb of faecher12) {
                 if (sb === "Geschichte") {
-                    Fach2Ge += 1;
-                    for (let k = 0; k < faecher11.length; k++) {
-                        let ssb = faecher11[k];
+                    Fach2Ge++;
+                    for (let ssb of faecher11) {
                         if (ssb === "Politikwissenschaften" || ssb === "Geografie" || ssb === "Wirtschaftswissenschaften" || ssb === "Philosophie" || ssb === "StudiumBeruf") {
-                            Af268K += 1;
+                            Af268K++;
                         }
                     }
-                    for (let l = 0; l < faecher12.length; l++) {
-                        let sbb = faecher12[l];
-                        if (sbb === "Politikwissenschaften" || sbb === "Geografie" || sbb === "Wirtschaftswissenschaften" || sbb === "Philosophie") {
-                            Af268K += 1;
+                    for (let ssbb of faecher12) {
+                        if (ssbb === "Politikwissenschaften" || ssbb === "Geografie" || ssbb === "Wirtschaftswissenschaften" || ssbb === "Philosophie") {
+                            Af268K++;
                         }
                     }
                 }
             }
         }
+        
         if (s === "Geografie") {
-            Fach2Geo += 1;
-            for (let j = 0; j < faecher12.length; j++) {
-                let sb = faecher12[j];
+            Fach2Geo++;
+            for (let sb of faecher12) {
                 if (sb === "Geografie") {
-                    Fach2Geo += 1;
-                    for (let k = 0; k < faecher11.length; k++) {
-                        let ssb = faecher11[k];
+                    Fach2Geo++;
+                    for (let ssb of faecher11) {
                         if (ssb === "Politikwissenschaften" || ssb === "Geschichte" || ssb === "Wirtschaftswissenschaften" || ssb === "Philosophie" || ssb === "StudiumBeruf") {
-                            Af268K += 1;
+                            Af268K++;
                         }
                     }
-                    for (let l = 0; l < faecher12.length; l++) {
-                        let sbb = faecher12[l];
-                        if (sbb === "Politikwissenschaften" || sbb === "Geschichte" || sbb === "Wirtschaftswissenschaften" || sbb === "Philosophie") {
-                            Af268K += 1;
+                    for (let ssbb of faecher12) {
+                        if (ssbb === "Politikwissenschaften" || ssbb === "Geschichte" || ssbb === "Wirtschaftswissenschaften" || ssbb === "Philosophie") {
+                            Af268K++;
                         }
                     }
                 }
             }
         }
+        
         if (s === "Wirtschaftswissenschaften") {
-            Fach2Geo += 1;
-            for (let j = 0; j < faecher12.length; j++) {
-                let sb = faecher12[j];
+            Fach2WW++;
+            for (let sb of faecher12) {
                 if (sb === "Wirtschaftswissenschaften") {
-                    Fach2Geo += 1;
-                    for (let k = 0; k < faecher11.length; k++) {
-                        let ssb = faecher11[k];
+                    Fach2WW++;
+                    for (let ssb of faecher11) {
                         if (ssb === "Politikwissenschaften" || ssb === "Geschichte" || ssb === "Geografie" || ssb === "Philosophie" || ssb === "StudiumBeruf") {
-                            Af268K += 1;
+                            Af268K++;
                         }
                     }
-                    for (let l = 0; l < faecher12.length; l++) {
-                        let sbb = faecher12[l];
-                        if (sbb === "Politikwissenschaften" || sbb === "Geschichte" || sbb === "Geografie" || sbb === "Philosophie") {
-                            Af268K += 1;
+                    for (let ssbb of faecher12) {
+                        if (ssbb === "Politikwissenschaften" || ssbb === "Geschichte" || ssbb === "Geografie" || ssbb === "Philosophie") {
+                            Af268K++;
                         }
                     }
                 }
             }
         }
+        
         if (s === "Philosophie") {
-            Fach2Geo += 1;
-            for (let j = 0; j < faecher12.length; j++) {
-                let sb = faecher12[j];
+            Fach2Ph++;
+            for (let sb of faecher12) {
                 if (sb === "Philosophie") {
-                    Fach2Geo += 1;
-                    for (let k = 0; k < faecher11.length; k++) {
-                        let ssb = faecher11[k];
+                    Fach2Ph++;
+                    for (let ssb of faecher11) {
                         if (ssb === "Politikwissenschaften" || ssb === "Geschichte" || ssb === "Geografie" || ssb === "Wirtschaftswissenschaften" || ssb === "StudiumBeruf") {
-                            Af268K += 1;
+                            Af268K++;
                         }
                     }
-                    for (let l = 0; l < faecher12.length; l++) {
-                        let sbb = faecher12[l];
-                        if (sbb === "Politikwissenschaften" || sbb === "Geschichte" || sbb === "Geografie" || sbb === "Wirtschaftswissenschaften") {
-                            Af268K += 1;
+                    for (let ssbb of faecher12) {
+                        if (ssbb === "Politikwissenschaften" || ssbb === "Geschichte" || ssbb === "Geografie" || ssbb === "Wirtschaftswissenschaften") {
+                            Af268K++;
                         }
                     }
                 }
             }
         }
     }
+
     if (Af268K >= 1) {
-        if (Fach2PW == 2 || Fach2WW == 2 || Fach2Ge == 2 || Fach2Geo == 2 || Fach2Ph == 2) {
+        if (Fach2PW === 2 || Fach2WW === 2 || Fach2Ge === 2 || Fach2Geo === 2 || Fach2Ph === 2) {
             regel5 = true;
             console.log("regel5 = true")
         } else {
