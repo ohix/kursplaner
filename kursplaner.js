@@ -21,7 +21,9 @@ Eingabe11.addEventListener('click', function() {
         button.addEventListener('click', addToFaecher11);
         activeArray11 = true;
         activeArray12 = false;
+        // activate all buttons
         button.disabled = false;
+        // disable buttons for input 11
         buttons.forEach(button => {
             if (faecher11.includes(button.dataset.subject)) {
                 button.disabled = true;
@@ -89,7 +91,9 @@ Eingabe12.addEventListener('click', function() {
         button.addEventListener('click', addToFaecher12);
         activeArray11 = false;
         activeArray12 = true;
+        // activate all buttons
         button.disabled = false;
+        // disable buttons for input 12
         buttons.forEach(button => {
             if (faecher12.includes(button.dataset.subject)) {
                 button.disabled = true;
@@ -120,6 +124,21 @@ Eingabe12.addEventListener('click', function() {
             arrayDisplay12.textContent = '';
         }
     });
+});
+
+
+const clearAll = document.getElementById('clear-All');
+clearAll.addEventListener('click', function() {
+    
+    faecher11.length = 0;
+    faecher12.length = 0;
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
+    const arrayDisplay11 = document.getElementById('array-display11');
+    arrayDisplay11.textContent = '';
+    const arrayDisplay12 = document.getElementById('array-display12');
+    arrayDisplay12.textContent = '';
 });
 
 // remove last element of array
@@ -662,7 +681,7 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     
-    if (regel1 && regel2 && regel3 && regel4 && regel5 && regel6 && regel7 && regel8 && regel9 && regel10 && regel11 && regel12) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true) {
         console.log("    !!! ALLES GESCHAFFT !!!   ");
         console.log("!!! Deine Wahl ist erlaubt !!!");
     } else {
