@@ -8,7 +8,7 @@ let faecher12_0_5 = [];
 const buttons = document.querySelectorAll('.subject-button');
 const inputFinishedButton = document.getElementById('input-finished');
 
-const Eingabe11 = document.getElementById('Eingabe11');
+const Eingabe11 = document.getElementById('Eingabe11'); 
 const Eingabe12 = document.getElementById('Eingabe12');
 
 let activeArray11 = null;
@@ -248,7 +248,7 @@ let regel9 = false;
 let regel10 = false;
 let regel11 = false;
 let regel12 = false;
-
+let regel13 = false;
 
 //.---------------------------------------------------------------------------------------
 
@@ -677,10 +677,22 @@ inputFinishedButton.addEventListener('click', function() {
     }
     
     // ------------------
+    // Regel 13...
     
+    if (faecher11[2] === "Wirtschaftswissenschaften"){
+        console.log("Wirtschaftswissenschaften darf nicht als 3.PF belegt werden")
+    }else{
+        regel13 = true;
+        console.log("regel13 = true")
+    }
+
+
+
+    // ------------------
+
     // ------------------
     
-    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true) {
         console.log("    !!! ALLES GESCHAFFT !!!   ");
         console.log("!!! Deine Wahl ist erlaubt !!!");
     } else {
