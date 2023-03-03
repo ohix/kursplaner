@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Kursplaner</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
 <body>
     
     <h1>Kursplaner</h1>
     
     <h4>Wähle deine Kurse!</h4>
     <p>Reihenfolge & Anzahl: LF1 / LF2 / 3.PF / 4.PF / 5.PK / Fach 6 / 7 / 8 / 9 / 10 (...)</p>
-
+    
     <p> <small> Eingabe des Kursjahres: </small> </p>
-
+    
     <button id="Eingabe11" style="margin-right: 20px;" >Q1/Q2</button>
     <!-- display: inline-block shows array in same line as button -->
     <div id="array-display11" style="display: inline-block;"></div>
     <p> <small> </small> </p>
     <button id="Eingabe12" style="margin-right: 20px;" >Q3/Q4</button>
     <div id="array-display12"style="display: inline-block;"></div>
-
+    
     <p> <small> 1. Aufgabenfeld: </small> </p>
     <button type="button" class="subject-button" data-subject="Deutsch">Deutsch</button>
     <button type="button" class="subject-button" data-subject="Englisch">Englisch</button>
@@ -50,7 +61,7 @@
     <button id="remove-btn">Letzte Eingabe entfernen</button>
     <button id="clear-btn">Eingabe Kursjahr löschen</button>
     <button id="clear-All">Neustart</button>
-
+    
     <script type="text/javascript" src="kursplaner.js"></script>
     
 </body>

@@ -249,6 +249,7 @@ let regel10 = false;
 let regel11 = false;
 let regel12 = false;
 let regel13 = false;
+let regel14 = false;
 
 //.---------------------------------------------------------------------------------------
 
@@ -263,6 +264,20 @@ inputFinishedButton.addEventListener('click', function() {
     faecher11_0_5 = faecher11.slice(0, 5);
     faecher12_0_5 = faecher12.slice(0, 5);
     
+    let regel1 = false;
+    let regel2 = false; 
+    let regel3 = false;
+    let regel4 = false;
+    let regel5 = false;
+    let regel6 = false;
+    let regel7 = false;
+    let regel8 = false;
+    let regel9 = false;
+    let regel10 = false;
+    let regel11 = false;
+    let regel12 = false;
+    let regel13 = false;
+    let regel14 = false;
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
@@ -686,13 +701,28 @@ inputFinishedButton.addEventListener('click', function() {
         console.log("regel13 = true")
     }
 
-
+    // ------------------
+    // Regel 14...
+    
+    let nosport = 0;
+    for (let s of faecher11_0_5) {
+        if (s !== "Sport") {
+            nosport++;
+        }
+    }
+    
+    if (nosport === faecher11_0_5.length) {
+        regel14 = true;
+        console.log("regel14 = true");
+    } else {
+        console.log("Sport darf nicht als LF, PF und 5.PK gewählt werden");
+    }
 
     // ------------------
 
     // ------------------
     
-    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true) {
         console.log("    !!! ALLES GESCHAFFT !!!   ");
         console.log("!!! Deine Wahl ist erlaubt !!!");
     } else {
