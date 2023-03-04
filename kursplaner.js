@@ -14,6 +14,25 @@ const Eingabe12 = document.getElementById('Eingabe12');
 let activeArray11 = null;
 let activeArray12 = null;
 
+
+function addToFaecher11() {
+    const subject = this.dataset.subject;
+    faecher11.push(subject);
+    console.log(faecher11);
+    this.disabled = true;
+    const arrayDisplay11 = document.getElementById('array-display11');
+    arrayDisplay11.textContent = faecher11.join(', ');
+}
+
+function addToFaecher12() {
+    const subject = this.dataset.subject;
+    faecher12.push(subject);
+    console.log(faecher12);
+    this.disabled = true;
+    const arrayDisplay12 = document.getElementById('array-display12');
+    arrayDisplay12.textContent = faecher12.join(', ');
+}
+
 // Versuch Eingabe für 11. Klasse
 Eingabe11.addEventListener('click', function() {
     Eingabe12.disabled = false;
@@ -167,23 +186,7 @@ clearAll.addEventListener('click', function() {
 //     }
 // });
 
-function addToFaecher11() {
-    const subject = this.dataset.subject;
-    faecher11.push(subject);
-    console.log(faecher11);
-    this.disabled = true;
-    const arrayDisplay11 = document.getElementById('array-display11');
-    arrayDisplay11.textContent = faecher11.join(', ');
-}
 
-function addToFaecher12() {
-    const subject = this.dataset.subject;
-    faecher12.push(subject);
-    console.log(faecher12);
-    this.disabled = true;
-    const arrayDisplay12 = document.getElementById('array-display12');
-    arrayDisplay12.textContent = faecher12.join(', ');
-}
 
 
 //----------------------------------------------------------------------------------------
