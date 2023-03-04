@@ -1,3 +1,11 @@
+// Icon
+
+let today = new Date();
+let dateElement = document.getElementById('date');
+
+dateElement.innerHTML = today.getDate();
+
+
 // Define an empty array to store the strings
 const faecher11 = [];
 let faecher11_0_4 = [];
@@ -8,59 +16,15 @@ let faecher12_0_5 = [];
 const buttons = document.querySelectorAll('.subject-button');
 const inputFinishedButton = document.getElementById('input-finished');
 
-const year11 = document.getElementById('year11'); 
-const year12 = document.getElementById('year12');
-const feedback = document.getElementById('feedback');
-
-const clearBtn = document.getElementById('clear-btn');
-
+const Eingabe11 = document.getElementById('Eingabe11'); 
+const Eingabe12 = document.getElementById('Eingabe12');
 
 let activeArray11 = null;
 let activeArray12 = null;
 
-
-function addToFaecher11() {
-    const subject = this.dataset.subject;
-    faecher11.push(subject);
-    console.log(faecher11);
-    this.disabled = true;
-    const arrayDisplay11 = document.getElementById('array-display11');
-    arrayDisplay11.textContent = faecher11.join(', ');
-}
-
-function addToFaecher12() {
-    const subject = this.dataset.subject;
-    faecher12.push(subject);
-    console.log(faecher12);
-    this.disabled = true;
-    const arrayDisplay12 = document.getElementById('array-display12');
-    arrayDisplay12.textContent = faecher12.join(', ');
-}
-
-function clearArray(faecherarray) {
-    console.log(faecherarray);
-    faecherarray.length = 0;
-    buttons.forEach(button => {
-        button.disabled = false;
-    });
-}
-
-function displayArray(faecherarray) {
-    console.log(faecherarray);
-    if (faecherarray === faecher11) {
-        const arrayDisplay11 = document.getElementById('array-display11');
-        arrayDisplay11.textContent = faecherarray;
-    }
-    if (faecherarray === faecher12) {
-        const arrayDisplay12 = document.getElementById('array-display12');
-        arrayDisplay12.textContent = faecherarray;
-    }
-}
-
-
 // Versuch Eingabe für 11. Klasse
-year11.addEventListener('click', function() {
-    year12.disabled = false;
+Eingabe11.addEventListener('click', function() {
+    Eingabe12.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher12);
         button.addEventListener('click', addToFaecher11);
@@ -74,17 +38,34 @@ year11.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
-        year11.disabled = true;
+        Eingabe11.disabled = true;
     });
-
+    
+    
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const subject = button.dataset.subject;
+    //         faecher11.push(subject);
+    //         console.log(faecher11);
+    //         button.disabled = true;
+    //         const arrayDisplay11 = document.getElementById('array-display11');
+    //         arrayDisplay11.textContent = faecher11.join(', ');
+    //     });
+    // });
+    
+    // clear elements of array
+    const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
-        clearArray(faecher11);
-        displayArray(faecher11);
+        if (activeArray11 === true && activeArray12 === false) {
+            faecher11.length = 0;
+            buttons.forEach(button => {
+                button.disabled = false;
+            });
+            const arrayDisplay = document.getElementById('array-display11');
+            arrayDisplay.textContent = '';
+        }
     });
 });
-
-
-
 
 // remove last element of array
 const removeBtn = document.getElementById('remove-btn');
@@ -114,8 +95,8 @@ removeBtn.addEventListener('click', function() {
 //----------------------------------------------------------------------------------------
 
 // Versuch Eingabe für 12. Klasse
-year12.addEventListener('click', function() {
-    year11.disabled = false;
+Eingabe12.addEventListener('click', function() {
+    Eingabe11.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher11);
         button.addEventListener('click', addToFaecher12);
@@ -129,17 +110,33 @@ year12.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
-        year12.disabled = true;
+        Eingabe12.disabled = true;
     });
     
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const subject = button.dataset.subject;
+    //         faecher12.push(subject);
+    //         console.log(faecher12);
+    //         button.disabled = true;
+    //         const arrayDisplay12 = document.getElementById('array-display12');
+    //         arrayDisplay12.textContent = faecher12.join(', ');
+    //     });
+    // });
+      
+    //clear elements of array
+    const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
-        clearArray(faecher12);
-        displayArray(faecher12);
+        if (activeArray11 === false && activeArray12 === true) {
+            faecher12.length = 0;
+            buttons.forEach(button => {
+                button.disabled = false;
+            });
+            const arrayDisplay12 = document.getElementById('array-display12');
+            arrayDisplay12.textContent = '';
+        }
     });
 });
-
-
-
 
 // Neustart button
 const clearAll = document.getElementById('clear-All');
@@ -158,8 +155,8 @@ clearAll.addEventListener('click', function() {
         button.removeEventListener('click', addToFaecher11);
         button.removeEventListener('click', addToFaecher12);
     });
-    year11.disabled = false;
-    year12.disabled = false;
+    Eingabe11.disabled = false;
+    Eingabe12.disabled = false;
 });
 
 // remove last element of array
@@ -178,7 +175,23 @@ clearAll.addEventListener('click', function() {
 //     }
 // });
 
+function addToFaecher11() {
+    const subject = this.dataset.subject;
+    faecher11.push(subject);
+    console.log(faecher11);
+    this.disabled = true;
+    const arrayDisplay11 = document.getElementById('array-display11');
+    arrayDisplay11.textContent = faecher11.join(', ');
+}
 
+function addToFaecher12() {
+    const subject = this.dataset.subject;
+    faecher12.push(subject);
+    console.log(faecher12);
+    this.disabled = true;
+    const arrayDisplay12 = document.getElementById('array-display12');
+    arrayDisplay12.textContent = faecher12.join(', ');
+}
 
 
 //----------------------------------------------------------------------------------------
@@ -481,7 +494,7 @@ inputFinishedButton.addEventListener('click', function() {
             }
         }
     }
-    
+
     if (Af268K >= 1) {
         if (Fach2PW === 2 || Fach2WW === 2 || Fach2Ge === 2 || Fach2Geo === 2 || Fach2Ph === 2) {
             regel5 = true;
@@ -695,7 +708,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel13 = true;
         console.log("regel13 = true")
     }
-    
+
     // ------------------
     // Regel 14...
     
@@ -712,9 +725,9 @@ inputFinishedButton.addEventListener('click', function() {
     } else {
         console.log("Sport darf nicht als LF, PF und 5.PK gewählt werden");
     }
-    
+
     // ------------------
-    
+
     // ------------------
     
     if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true) {

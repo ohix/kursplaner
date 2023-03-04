@@ -2,3 +2,120 @@
 body {
     background-color: #C0B6AD;
 }
+
+
+
+/* --------------------------------------------------------------*/
+/* Style for buttons input11 and input12 */
+#Eingabe11, #Eingabe12 {
+    background-color: #bbd033;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-right: 0.7rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+#Eingabe11:hover, #Eingabe12:hover {
+    background-color: #6f7c1e;
+}
+
+#Eingabe11:active, #Eingabe12:active {
+    background-color: #6f7c1e;
+}
+#Eingabe11:disabled, #Eingabe12:disabled {
+    background-color: #454d13;
+}
+
+/* --------------------------------------------------------------*/
+/* Style for array in button line */
+#array-display11, #array-display12 {
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------*/
+/* Style for subject buttons */
+.subject-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    margin: 0.1rem 0.1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+.subject-button:hover {
+    background-color: #3e8e41;
+}
+
+.subject-button:active {
+    background-color: #1e7c34;
+}
+
+.subject-button:disabled {
+    background-color: #af4c75;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.subject-button:disabled:hover {
+    background-color: #af4c75;
+}  
+
+/* --------------------------------------------------------------*/
+/* Style for button input finish */
+#input-finished{
+    background-color: #34addd;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+#input-finished:hover{
+    background-color: #21708f;
+}
+
+#input-finished:active{
+    background-color: #16485b;
+}
+
+/* --------------------------------------------------------------*/
+/* Style for buttons remove, clear, clear all */
+#remove-btn, #clear-btn, #clear-All {
+    background-color: #da5975;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+}
+
+#remove-btn:hover, #clear-btn:hover, #clear-All:hover {
+    background-color: #aa3b53;
+}
+
+#remove-btn:active, #clear-btn:active, #clear-All:active {
+    background-color: #591d2a;
+}
