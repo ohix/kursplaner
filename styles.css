@@ -7,7 +7,7 @@ body {
 
 /* --------------------------------------------------------------*/
 /* Style for buttons input11 and input12 */
-#Eingabe11, #Eingabe12 {
+#year11, #year12 {
     background-color: #bbd033;
     border: none;
     color: white;
@@ -21,14 +21,14 @@ body {
     border-radius: 0.4rem;
 }
 
-#Eingabe11:hover, #Eingabe12:hover {
+#year11:hover, #year12:hover {
     background-color: #6f7c1e;
 }
 
-#Eingabe11:active, #Eingabe12:active {
+#year11:active, #year12:active {
     background-color: #6f7c1e;
 }
-#Eingabe11:disabled, #Eingabe12:disabled {
+#year11:disabled, #year12:disabled {
     background-color: #454d13;
 }
 

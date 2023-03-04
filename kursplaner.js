@@ -1,11 +1,3 @@
-// Icon
-
-let today = new Date();
-let dateElement = document.getElementById('date');
-
-dateElement.innerHTML = today.getDate();
-
-
 // Define an empty array to store the strings
 const faecher11 = [];
 let faecher11_0_4 = [];
@@ -16,15 +8,36 @@ let faecher12_0_5 = [];
 const buttons = document.querySelectorAll('.subject-button');
 const inputFinishedButton = document.getElementById('input-finished');
 
-const Eingabe11 = document.getElementById('Eingabe11'); 
-const Eingabe12 = document.getElementById('Eingabe12');
+const year11 = document.getElementById('year11'); 
+const year12 = document.getElementById('year12');
+const feedback = document.getElementById('feedback');
+
 
 let activeArray11 = null;
 let activeArray12 = null;
 
+
+function addToFaecher11() {
+    const subject = this.dataset.subject;
+    faecher11.push(subject);
+    console.log(faecher11);
+    this.disabled = true;
+    const arrayDisplay11 = document.getElementById('array-display11');
+    arrayDisplay11.textContent = faecher11.join(', ');
+}
+
+function addToFaecher12() {
+    const subject = this.dataset.subject;
+    faecher12.push(subject);
+    console.log(faecher12);
+    this.disabled = true;
+    const arrayDisplay12 = document.getElementById('array-display12');
+    arrayDisplay12.textContent = faecher12.join(', ');
+}
+
 // Versuch Eingabe für 11. Klasse
-Eingabe11.addEventListener('click', function() {
-    Eingabe12.disabled = false;
+year11.addEventListener('click', function() {
+    year12.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher12);
         button.addEventListener('click', addToFaecher11);
@@ -38,22 +51,10 @@ Eingabe11.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
-        Eingabe11.disabled = true;
+        year11.disabled = true;
+        
     });
-    
-    
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', function() {
-    //         const subject = button.dataset.subject;
-    //         faecher11.push(subject);
-    //         console.log(faecher11);
-    //         button.disabled = true;
-    //         const arrayDisplay11 = document.getElementById('array-display11');
-    //         arrayDisplay11.textContent = faecher11.join(', ');
-    //     });
-    // });
-    
-    // clear elements of array
+
     const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
         if (activeArray11 === true && activeArray12 === false) {
@@ -95,8 +96,8 @@ removeBtn.addEventListener('click', function() {
 //----------------------------------------------------------------------------------------
 
 // Versuch Eingabe für 12. Klasse
-Eingabe12.addEventListener('click', function() {
-    Eingabe11.disabled = false;
+year12.addEventListener('click', function() {
+    year11.disabled = false;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher11);
         button.addEventListener('click', addToFaecher12);
@@ -110,20 +111,10 @@ Eingabe12.addEventListener('click', function() {
                 button.disabled = true;
             }
         });
-        Eingabe12.disabled = true;
+        year12.disabled = true;
     });
     
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', function() {
-    //         const subject = button.dataset.subject;
-    //         faecher12.push(subject);
-    //         console.log(faecher12);
-    //         button.disabled = true;
-    //         const arrayDisplay12 = document.getElementById('array-display12');
-    //         arrayDisplay12.textContent = faecher12.join(', ');
-    //     });
-    // });
-      
+
     //clear elements of array
     const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
@@ -155,8 +146,8 @@ clearAll.addEventListener('click', function() {
         button.removeEventListener('click', addToFaecher11);
         button.removeEventListener('click', addToFaecher12);
     });
-    Eingabe11.disabled = false;
-    Eingabe12.disabled = false;
+    year11.disabled = false;
+    year12.disabled = false;
 });
 
 // remove last element of array
@@ -175,23 +166,7 @@ clearAll.addEventListener('click', function() {
 //     }
 // });
 
-function addToFaecher11() {
-    const subject = this.dataset.subject;
-    faecher11.push(subject);
-    console.log(faecher11);
-    this.disabled = true;
-    const arrayDisplay11 = document.getElementById('array-display11');
-    arrayDisplay11.textContent = faecher11.join(', ');
-}
 
-function addToFaecher12() {
-    const subject = this.dataset.subject;
-    faecher12.push(subject);
-    console.log(faecher12);
-    this.disabled = true;
-    const arrayDisplay12 = document.getElementById('array-display12');
-    arrayDisplay12.textContent = faecher12.join(', ');
-}
 
 
 //----------------------------------------------------------------------------------------
