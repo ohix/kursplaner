@@ -129,10 +129,13 @@ year12.addEventListener('click', function() {
     });
 });
 
+let logs = [];
+let logsResult = [];
+
 // Neustart button
 const clearAll = document.getElementById('clear-All');
 clearAll.addEventListener('click', function() {
-    
+
     faecher11.length = 0;
     faecher12.length = 0;
     buttons.forEach(button => {
@@ -148,6 +151,14 @@ clearAll.addEventListener('click', function() {
     });
     year11.disabled = false;
     year12.disabled = false;
+
+    // User feedback entfernen
+    logs.length = 0;
+    const consoleOutput = document.getElementById("console-output");
+    consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+    logsResult.length = 0;
+    const consoleOutputResult = document.getElementById("console-output-result");
+    consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
 });
 
 // remove last element of array
@@ -237,8 +248,7 @@ let regel15 = false;
 
 //.---------------------------------------------------------------------------------------
 
-let logs = [""];
-let logsResult = [""];
+
 
 function logToPage(message) {
     logs.push(message);
