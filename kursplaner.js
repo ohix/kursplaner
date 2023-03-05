@@ -11,7 +11,7 @@ const inputFinishedButton = document.getElementById('input-finished');
 const year11 = document.getElementById('year11'); 
 const year12 = document.getElementById('year12');
 const feedback = document.getElementById('feedback');
-
+const clearBtn = document.getElementById('clear-btn');
 
 let activeArray11 = null;
 let activeArray12 = null;
@@ -35,6 +35,27 @@ function addToFaecher12() {
     arrayDisplay12.textContent = faecher12.join(', ');
 }
 
+function clearArray(faecherarray) {
+    console.log(faecherarray);
+    faecherarray.length = 0;
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
+}
+
+function displayArray(faecherarray) {
+    console.log(faecherarray);
+    if (faecherarray === faecher11) {
+        const arrayDisplay11 = document.getElementById('array-display11');
+        arrayDisplay11.textContent = faecherarray;
+    }
+    if (faecherarray === faecher12) {
+        const arrayDisplay12 = document.getElementById('array-display12');
+        arrayDisplay12.textContent = faecherarray;
+    }
+}
+
+
 // Versuch Eingabe für 11. Klasse
 year11.addEventListener('click', function() {
     year12.disabled = false;
@@ -55,16 +76,9 @@ year11.addEventListener('click', function() {
         
     });
 
-    const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
-        if (activeArray11 === true && activeArray12 === false) {
-            faecher11.length = 0;
-            buttons.forEach(button => {
-                button.disabled = false;
-            });
-            const arrayDisplay = document.getElementById('array-display11');
-            arrayDisplay.textContent = '';
-        }
+        clearArray(faecher11);
+        displayArray(faecher11);
     });
 });
 
@@ -116,16 +130,9 @@ year12.addEventListener('click', function() {
     
 
     //clear elements of array
-    const clearBtn = document.getElementById('clear-btn');
     clearBtn.addEventListener('click', function() {
-        if (activeArray11 === false && activeArray12 === true) {
-            faecher12.length = 0;
-            buttons.forEach(button => {
-                button.disabled = false;
-            });
-            const arrayDisplay12 = document.getElementById('array-display12');
-            arrayDisplay12.textContent = '';
-        }
+        clearArray(faecher12);
+        displayArray(faecher12);
     });
 });
 
