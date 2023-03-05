@@ -8,54 +8,62 @@
 </head>
 <body>
     
-    <h1>Kursplaner</h1>
-    
-    <h4>Wähle deine Kurse!</h4>
+    <h1>Kursplaner - Wähle deine Kurse!</h1>
     <p>Reihenfolge & Anzahl: LF1 / LF2 / 3.PF / 4.PF / 5.PK / Fach 6 / 7 / 8 / 9 / 10 (...)</p>
     
-    <p> <small> Eingabe des Kursjahres: </small> </p>
+    <p> <strong>Eingabe des Kursjahres </strong></p>
     
-    <button id="year11" style="margin-right: 20px;" >Q1/Q2</button>
-    <!-- display: inline-block shows array in same line as button -->
-    <div id="array-display11" style="display: inline-block;"></div>
-    <p></p>
-    <button id="year12" style="margin-right: 20px;" >Q3/Q4</button>
-    <div id="array-display12"style="display: inline-block;"></div>
+    <button id="year11">Q1/Q2</button>
+    <button id="year12">Q3/Q4</button>
+
+
     
-    <p> <small> 1. Aufgabenfeld: </small> </p>
+    <h4>MINT</h4>
+    <button type="button" class="subject-button" data-subject="Mathematik">Mathematik</button>
+    <button type="button" class="subject-button" data-subject="Physik">Physik</button>
+    <button type="button" class="subject-button" data-subject="Chemie">Chemie</button>
+    <button type="button" class="subject-button" data-subject="Biologie">Biologie</button>
+    <button type="button" class="subject-button" data-subject="Informatik">Informatik</button>
+
+    <h4>Sprachen</h4>
     <button type="button" class="subject-button" data-subject="Deutsch">Deutsch</button>
     <button type="button" class="subject-button" data-subject="Englisch">Englisch</button>
     <button type="button" class="subject-button" data-subject="Franzoesisch">Französisch</button>
     <button type="button" class="subject-button" data-subject="Latein">Latein</button>
     <button type="button" class="subject-button" data-subject="Spanisch">Spanisch</button>
     <button type="button" class="subject-button" data-subject="Japanisch">Japanisch</button>
-    <button type="button" class="subject-button" data-subject="Musik">Musik</button>
-    <button type="button" class="subject-button" data-subject="BildendeKunst">Bildende Kunst</button>
-    <button type="button" class="subject-button" data-subject="DarstellendesSpielTheater">Darstellendes Spiel / Theater</button>
-    <p> <small> 2. Aufgabenfeld: </small> </p>
+    
+    <h4>Gesellschaftswissenschaften</h4>
     <button type="button" class="subject-button" data-subject="Politikwissenschaften">Politikwissenschaften</button>
     <button type="button" class="subject-button" data-subject="Geschichte">Geschichte</button>
     <button type="button" class="subject-button" data-subject="Geografie">Geografie</button>
     <button type="button" class="subject-button" data-subject="Wirtschaftswissenschaften">Wirtschaftswissenschaften</button>
     <button type="button" class="subject-button" data-subject="Philosophie">Philosophie</button>
+
+    <h4>Künstlerische Fächer</h4>
+    <button type="button" class="subject-button" data-subject="Musik">Musik</button>
+    <button type="button" class="subject-button" data-subject="BildendeKunst">Bildende Kunst</button>
+    <button type="button" class="subject-button" data-subject="DarstellendesSpielTheater">Darstellendes Spiel / Theater</button>
+
+    <h4>weitere Fächer</h4>
     <button type="button" class="subject-button" data-subject="StudiumBeruf">Studium und Beruf</button>
-    <p> <small> 3. Aufgabenfeld: </small> </p>
-    <button type="button" class="subject-button" data-subject="Mathematik">Mathematik</button>
-    <button type="button" class="subject-button" data-subject="Physik">Physik</button>
-    <button type="button" class="subject-button" data-subject="Chemie">Chemie</button>
-    <button type="button" class="subject-button" data-subject="Biologie">Biologie</button>
-    <button type="button" class="subject-button" data-subject="Informatik">Informatik</button>
-    <p> <small> Weitere Fächer: </small> </p>
     <button type="button" class="subject-button" data-subject="Sport">Sport (Praxis)</button>
     <button type="button" class="subject-button" data-subject="SportTheorie">Sport-Theorie</button>
+
+    <p></p>
+    <!-- display: inline-block shows array in same line as button -->
+    <div id="array-display11" style="display: inline-block;"></div>
+    <p></p>
+    <div id="array-display12"style="display: inline-block;"></div>
     <!-- add more buttons here -->
-    <p> <small> Eingabe bearbeiten: </small> </p>
+    <p> <strong>Eingabe bearbeiten</strong></p>
     <!-- new button to indicate when input is finished -->
     
-    <button id="input-finished">Überprüfung</button>
     <button id="remove-btn">Letzte Eingabe entfernen</button>
     <button id="clear-btn">Eingabe Kursjahr löschen</button>
     <button id="clear-All">Neustart</button>
+    <p></p>
+    <button id="input-finished">Überprüfung</button>
     
     <div id="feedback"></div>
 
