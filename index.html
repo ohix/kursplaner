@@ -8,15 +8,14 @@
 </head>
 <body>
     
-    
-    
-    
     <h1>Kursplaner - Wähle deine Kurse!</h1>
     <p>Reihenfolge & Anzahl: LF1 / LF2 / 3.PF / 4.PF / 5.PK / Fach 6 / 7 / 8 / 9 / 10 (...)</p>
     <div class="jahreswahl">
         <p> <strong>Eingabe des Kursjahres </strong></p>
         <button id="year11">Q1/Q2</button>
+        <span id="array-length11"></span>
         <button id="year12">Q3/Q4</button>
+        <span id="array-length12"></span>
     </div>
     <div class="faecherwahl">
         <h4>MINT</h4>
@@ -63,13 +62,13 @@
         <p> <strong>Eingabe bearbeiten</strong></p>
         <!-- new button to indicate when input is finished -->
         
-        <button id="input-finished" class="feedbackbutton" >Überprüfung</button>
+        <button id="input-finished">Überprüfung</button>
         <button id="remove-btn">Letzte Eingabe entfernen</button>
         <button id="clear-btn">Eingabe Kursjahr löschen</button>
         <button id="clear-All">Neustart</button>
         <p></p>
-        
     </div>
+    
     <div class="feedback">
         <div id="feedback"></div>    
         <script type="text/javascript" src="kursplaner.js"></script>
@@ -79,8 +78,17 @@
     </div>
     
 </body>
+
 <footer>
-    <div class="imprint"><p>This is the footer of the page.</p></div>
+    <div class="impressum">
+        <p>&copy; 2023 Kursplaner des Melanchthon-Gymanasiums</p>
+        <p>Adele-Sandrock-Straße 75, 12627 Berlin, Germany</p>
+        <p> <br> </p>
+        <p>created by Alex E. & Laurenz K.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: joe.mama@example.com</p>
+        <p>Berlin, Germany</p>
+    </div>
 </footer>
 
 </html>
