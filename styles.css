@@ -161,4 +161,14 @@ body {
 
 /* -------------------------------------------------- */
 
+.impressum {
+    background-color: #111010;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.6rem;
+}
+
 /* -------------------------------------------------- */
