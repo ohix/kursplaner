@@ -1,118 +1,177 @@
+
 body {
-    background-color: #000000;
+    background-color: #000000; //background-color: #121212;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 35rem;
-    margin: 0 auto;
-    border: 1rem solid transparent;
+    margin: 0 auto; /*set the horizontal margin to auto */
+    border: 1rem;
     border-radius: 0.4rem;
-    padding: 1rem;
+    padding: 1rem 1rem;
 }
 
-/* Array in button line */
-#array-display11,
-#array-display12 {
+
+
+/* --------------------------------------------------------------*/
+/* Style for array in button line */
+#array-display11, #array-display12 {
     display: inline-block;
 }
 
-/* Subject buttons */
-.subject-button,
-#year11,
-#year12 {
-    background-color: #3700b3;
+/* --------------------------------------------------------------*/
+/* Style for subject buttons */
+.subject-button, #year11, #year12 {
+    background-color: #3700B3;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
     text-align: center;
     display: inline-block;
     font-size: 0.7rem;
-    margin: 0.1rem;
+    margin: 0.1rem 0.1rem;
     cursor: pointer;
     border-radius: 0.4rem;
 }
-#year11:active,
-#year12:active {
-    background-color: #bb86fc;
+#year11:active, #year12:active {
+    background-color: #BB86FC;
 }
-#year11:hover,
-#year12:hover {
-    background-color: #6200ee;
+#year11:hover, #year12:hover {
+    background-color: #6200EE;
 }
-#year11:disabled,
-#year12:disabled {
-    background-color: #bb86fc;
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-.subject-button:active {
-    background-color: #bb86fc;
-}
-.subject-button:hover {
-    background-color: #6200ee;
-}
-.subject-button:disabled {
-    background-color: #bb86fc;
+
+
+#year11:disabled, #year12:disabled {
+    background-color: #BB86FC;
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-/* Containers */
-.jahreswahl,
-.faecherwahl,
-.arrayanzeige11,
-.arrayanzeige12,
-.eingabeBearbeitung,
-.feedbackbutton,
-.feedback {
-    background-color: #1f1f1f;
-    border: 1rem solid transparent;
-    border-radius: 0.4rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.7rem;
+.subject-button:active {
+    background-color: #BB86FC;
 }
+.subject-button:hover {
+    background-color: #6200EE;
+}
+
+
+
+.subject-button:disabled {
+    background-color: #BB86FC;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.menu {
+
+}  
+
+.jahreswahl {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.faecherwahl {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}  
+
+.arrayanzeige11 {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 0.5rem;
+}  
+.arrayanzeige12 {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}  
+.eingabeBearbeitung {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
+    
+}  
+.feedbackbutton {
+    background-color: #34addd;
+    color: white;
+    border: 1rem; 
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 0.7rem;
+
+}
+
 .feedback {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
 }
 
-/* Button input finish */
-#input-finished {
-    background-color: #34addd;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.7rem;
-    margin-right: 0.2rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
+
+
+
+
+/* --------------------------------------------------------------*/
+/* Style for button input finish */
+#input-finished{
+    /* background-color: #34addd; */
+    /* border: none; */
+    /* color: white; */
+    /* padding: 0.5rem 1rem; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 0.7rem; */
+    /* margin-right: 0.2rem; */
+    /* cursor: pointer; */
+    
 }
-#input-finished:hover {
+
+#input-finished:hover{
     background-color: #21708f;
 }
-#input-finished:active {
+
+#input-finished:active{
     background-color: #16485b;
 }
 
-/* Buttons remove, clear, clear all */
-#remove-btn,
-#clear-btn,
-#clear-All {
+/* --------------------------------------------------------------*/
+/* Style for buttons remove, clear, clear all */
+#remove-btn, #clear-btn, #clear-All {
     background-color: #da5975;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
     font-size: 0.7rem;
     margin-right: 0.2rem;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 0.4rem;
 }
-#remove-btn:hover,
-#clear-btn:hover,
-#clear-All:hover {
+
+#remove-btn:hover, #clear-btn:hover, #clear-All:hover {
     background-color: #aa3b53;
 }
-#remove-btn:active,
-#clear-btn:active,
-#clear-All:active {
+
+#remove-btn:active, #clear-btn:active, #clear-All:active {
     background-color: #591d2a;
 }
