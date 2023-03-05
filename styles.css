@@ -38,7 +38,6 @@ body {
     background-color: #6200EE;
 }
 
-
 #year11:disabled, #year12:disabled {
     background-color: #BB86FC;
     opacity: 0.6;
@@ -52,9 +51,8 @@ body {
     background-color: #6200EE;
 }
 
-
 .subject-button:disabled {
-    background-color: #BB86FC;
+    background-color: #000000;
     opacity: 0.6;
     cursor: not-allowed;
 }
@@ -119,7 +117,9 @@ body {
     font-size: 1rem;
 }
 
-
+.imprint {
+    
+}
 
 
 
