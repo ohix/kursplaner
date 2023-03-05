@@ -79,12 +79,22 @@ year11.addEventListener('click', function() {
         year11.disabled = true;
         
     });
-
+    
     clearBtn.addEventListener('click', function() {
-        clearArray(faecher11);
-        displayArray(faecher11);
-        const faecher11length = document.getElementById("array-length11");
-        faecher11length.textContent = faecher11.length;
+        if (activeArray11 === true && activeArray12 === false) {
+            clearArray(faecher11);
+            displayArray(faecher11);
+            const faecher11length = document.getElementById("array-length11");
+            faecher11length.textContent = faecher11.length;
+            
+            // User feedback entfernen
+            logs.length = 0;
+            const consoleOutput = document.getElementById("console-output");
+            consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+            logsResult.length = 0;
+            const consoleOutputResult = document.getElementById("console-output-result");
+            consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+        }
     });
 });
 
@@ -138,13 +148,23 @@ year12.addEventListener('click', function() {
         year12.disabled = true;
     });
     
-
+    
     //clear elements of array
     clearBtn.addEventListener('click', function() {
-        clearArray(faecher12);
-        displayArray(faecher12);
-        const faecher12length = document.getElementById("array-length12");
-        faecher12length.textContent = faecher12.length;
+        if (activeArray11 === false && activeArray12 === true) {
+            clearArray(faecher12);
+            displayArray(faecher12);
+            const faecher12length = document.getElementById("array-length12");
+            faecher12length.textContent = faecher12.length;
+
+            // User feedback entfernen
+            logs.length = 0;
+            const consoleOutput = document.getElementById("console-output");
+            consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+            logsResult.length = 0;
+            const consoleOutputResult = document.getElementById("console-output-result");
+            consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+        }
     });
 });
 
