@@ -53,16 +53,11 @@ body {
 }
 
 
-
 .subject-button:disabled {
     background-color: #BB86FC;
     opacity: 0.6;
     cursor: not-allowed;
 }
-
-.menu {
-
-}  
 
 .jahreswahl {
     background-color: #1F1F1F;
@@ -112,7 +107,7 @@ body {
     padding: 0.5rem 1rem;
     margin-right: 1rem;
     font-size: 0.7rem;
-
+    
 }
 
 .feedback {
@@ -174,4 +169,11 @@ body {
 
 #remove-btn:active, #clear-btn:active, #clear-All:active {
     background-color: #591d2a;
+}
+
+@media only screen and (max-width: 3000px) {
+    button {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
 }
