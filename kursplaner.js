@@ -237,11 +237,14 @@ let regel14 = false;
 //.---------------------------------------------------------------------------------------
 
 let logs = [""];
+let logsResult = [""];
 
 function logToPage(message) {
     logs.push(message);
 }
-
+function logToPageResult(message) {
+    logsResult.push(message);
+}
 
 // --- Regeln ---
 
@@ -249,6 +252,7 @@ function logToPage(message) {
 inputFinishedButton.addEventListener('click', function() {
 
     logs.length = 1;
+    logsResult.length = 1;
 
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
@@ -685,10 +689,10 @@ inputFinishedButton.addEventListener('click', function() {
     // Regel 13...
     
     if (faecher11[2] === "Wirtschaftswissenschaften"){
-        console.log("Wirtschaftswissenschaften darf nicht als 3.PF belegt werden");
+        logToPage("Wirtschaftswissenschaften darf nicht als 3.PF belegt werden");
     }else{
-        console.log = true;
-        logToPage("regel13 = true")
+        regel13 = true;
+        console.log("regel13 = true")
     }
 
     // ------------------
@@ -703,9 +707,9 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (nosport === faecher11_0_5.length) {
         regel14 = true;
-        // console.log("regel14 = true");
+        console.log("regel14 = true");
     } else {
-        logToPage("Sport darf nicht als LF, PF und 5.PK gewählt werden");
+        console.log("Sport darf nicht als LF, PF und 5.PK gewählt werden");
     }
 
     // ------------------
@@ -713,16 +717,21 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     
     if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true) {
-        logToPage("    !!! ALLES GESCHAFFT !!!   ");
-        logToPage("!!! Deine Wahl ist erlaubt !!!");
+        logToPageResult("    !!! ALLES GESCHAFFT !!!   ");
+        logToPageResult("!!! Deine Wahl ist erlaubt !!!");
     } else {
-        logToPage("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
+        logToPageResult("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
     }
     
     // ------------------
     
     // ------------------
-    
+
+    const consoleOutputResult = document.getElementById("console-output-result");
+    // consoleOutput.textContent = logs.join("\n");
+    consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+
+    // ------------------
     const consoleOutput = document.getElementById("console-output");
     // consoleOutput.textContent = logs.join("\n");
     consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
