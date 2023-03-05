@@ -5,9 +5,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     width: 35rem; /*set the width of the container */
     margin: 0 auto; /*set the horizontal margin to auto */
-    /* border: 1rem; */
-    /* border-radius: 0.4rem; */
-    /* padding: 1rem 1rem; */
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
 }
 
 
@@ -78,7 +78,39 @@ body {
     border: 1rem;
     border-radius: 0.4rem;
     padding: 1rem 1rem;
+    margin-bottom: 1rem;
 }  
+
+.arrayanzeige11 {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 0.5rem;
+}  
+.arrayanzeige12 {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}  
+.eingabeBearbeitung {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}  
+/* #input-finished:hover {
+    margin-right: 4rem;
+} */
+
+
+
+
+
+
 
 
 
