@@ -1,35 +1,60 @@
 
 body {
-    background-color: #000000; //background-color: #121212;
+    background-color: #000000;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto; /*set the horizontal margin to auto */
+    margin: 0 auto;
     border: 1rem;
     border-radius: 0.4rem;
     padding: 1rem 1rem;
 }
 
+/* -------------------------------------------------- */
 
-
-/* --------------------------------------------------------------*/
-/* Style for array in button line */
-#array-display11, #array-display12 {
-    display: inline-block;
+.jahreswahl {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
+#year11:active, #year12:active {
+    background-color: #BB86FC;
+}
+#year11:hover, #year12:hover {
+    background-color: #6200EE;
+}
+
+#year11:disabled, #year12:disabled {
+    background-color: #BB86FC;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 #array-length11, #array-length12 {
     background-color: #7843f4;
     border: 1rem;
     border-radius: 0.4rem;
-    padding: 0.3rem 1rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     margin-right: 1.5rem;
+    font-size: 0.7rem;
+    cursor: not-allowed;
 }
 
+/* -------------------------------------------------- */
 
-/* --------------------------------------------------------------*/
-/* Style for subject buttons */
+.faecherwahl {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+} 
+
 .subject-button, #year11, #year12 {
     background-color: #3700B3;
     border: none;
@@ -42,19 +67,7 @@ body {
     cursor: pointer;
     border-radius: 0.4rem;
 }
-#year11:active, #year12:active {
-    background-color: #BB86FC;
-}
-#year11:hover, #year12:hover {
-    background-color: #6200EE;
-}
 
-
-#year11:disabled, #year12:disabled {
-    background-color: #BB86FC;
-    opacity: 0.6;
-    cursor: not-allowed;
-}
 
 .subject-button:active {
     background-color: #BB86FC;
@@ -63,33 +76,13 @@ body {
     background-color: #6200EE;
 }
 
-
-
 .subject-button:disabled {
     background-color: #BB86FC;
     opacity: 0.6;
     cursor: not-allowed;
 }
 
-.menu {
-
-}  
-
-.jahreswahl {
-    background-color: #1F1F1F;
-    border: 1rem;
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
-}
-
-.faecherwahl {
-    background-color: #1F1F1F;
-    border: 1rem;
-    border-radius: 0.4rem;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-}  
+/* -------------------------------------------------- */
 
 .arrayanzeige11 {
     background-color: #1F1F1F;
@@ -105,6 +98,9 @@ body {
     padding: 1rem 1rem;
     margin-bottom: 1rem;
 }  
+
+/* -------------------------------------------------- */
+
 .eingabeBearbeitung {
     background-color: #1F1F1F;
     border: 1rem;
@@ -113,9 +109,9 @@ body {
     margin-bottom: 1rem;
     margin-right: 0.2rem;
     font-size: 0.7rem;
-    
-}  
-.feedbackbutton {
+} 
+
+#input-finished {
     background-color: #34addd;
     color: white;
     border: 1rem; 
@@ -126,35 +122,6 @@ body {
 
 }
 
-.feedback {
-    background-color: #1F1F1F;
-    border: 1rem;
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-    margin-bottom: 4rem;
-    font-size: 1rem;
-}
-
-
-
-
-
-/* --------------------------------------------------------------*/
-/* Style for button input finish */
-#input-finished{
-    /* background-color: #34addd; */
-    /* border: none; */
-    /* color: white; */
-    /* padding: 0.5rem 1rem; */
-    /* text-align: center; */
-    /* text-decoration: none; */
-    /* display: inline-block; */
-    /* font-size: 0.7rem; */
-    /* margin-right: 0.2rem; */
-    /* cursor: pointer; */
-    
-}
-
 #input-finished:hover{
     background-color: #21708f;
 }
@@ -163,19 +130,13 @@ body {
     background-color: #16485b;
 }
 
-/* --------------------------------------------------------------*/
-/* Style for buttons remove, clear, clear all */
 #remove-btn, #clear-btn, #clear-All {
     background-color: #da5975;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
-    /* text-align: center; */
-    /* text-decoration: none; */
-    /* display: inline-block; */
     font-size: 0.7rem;
     margin-right: 0.2rem;
-    /* cursor: pointer; */
     border-radius: 0.4rem;
 }
 
@@ -186,3 +147,18 @@ body {
 #remove-btn:active, #clear-btn:active, #clear-All:active {
     background-color: #591d2a;
 }
+
+/* -------------------------------------------------- */
+
+.feedback {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+}
+
+/* -------------------------------------------------- */
+
+/* -------------------------------------------------- */
