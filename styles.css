@@ -101,14 +101,26 @@ body {
     border-radius: 0.4rem;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
+    
 }  
-/* #input-finished:hover {
-    margin-right: 4rem;
-} */
+.feedbackbutton {
+    background-color: #34addd;
+    border: 1rem; 
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 0.7rem;
 
+}
 
-
-
+.feedback {
+    background-color: #1F1F1F;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
 
 
 
@@ -117,17 +129,17 @@ body {
 /* --------------------------------------------------------------*/
 /* Style for button input finish */
 #input-finished{
-    background-color: #34addd;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.7rem;
-    margin-right: 0.2rem;
-    cursor: pointer;
-    border-radius: 0.4rem;
+    /* background-color: #34addd; */
+    /* border: none; */
+    /* color: white; */
+    /* padding: 0.5rem 1rem; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 0.7rem; */
+    /* margin-right: 0.2rem; */
+    /* cursor: pointer; */
+    
 }
 
 #input-finished:hover{
