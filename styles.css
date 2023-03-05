@@ -1,6 +1,6 @@
 
 body {
-    background-color: #121212;
+    background-color: #000000;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -43,12 +43,11 @@ body {
 /* --------------------------------------------------------------*/
 /* Style for subject buttons */
 .subject-button {
-    background-color: #4CAF50;
+    background-color: #3700B3;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 0.7rem;
     margin: 0.1rem 0.1rem;
@@ -57,11 +56,11 @@ body {
 }
 
 .subject-button:hover {
-    background-color: #3e8e41;
+    background-color: #6200EE;
 }
 
 .subject-button:active {
-    background-color: #1e7c34;
+    background-color: #BB86FC;
 }
 
 .subject-button:disabled {
@@ -80,7 +79,7 @@ body {
 }  
 
 .faecherwahl {
-    background-color: grey;
+    background-color: #121212;
     border: 1rem;
     border-radius: 0.4rem;
     padding: 1rem 1rem;
