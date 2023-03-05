@@ -757,7 +757,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel12 = true;
         console.log("regel12 = true");
     } else {
-        logToPage("Geschichte muss in der 12. Klasse belegt werden, geschafft");
+        logToPage("Geschichte muss in der 12. Klasse belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -805,7 +805,7 @@ inputFinishedButton.addEventListener('click', function() {
         logToPageResult("    !!! ALLES GESCHAFFT !!!   ");
         logToPageResult("!!! Deine Wahl ist erlaubt !!!");
     } else {
-        logToPageResult("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
+        logToPageResult("Du solltest die Wahl deiner Kurse leider berichtigen.");
     }
     
     // ------------------
