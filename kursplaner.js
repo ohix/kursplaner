@@ -16,6 +16,10 @@ const clearBtn = document.getElementById('clear-btn');
 let activeArray11 = null;
 let activeArray12 = null;
 
+const faecher11length = document.getElementById("array-length11");
+faecher11length.textContent = faecher11.length;
+const faecher12length = document.getElementById("array-length12");
+faecher12length.textContent = faecher12.length;
 
 function addToFaecher11() {
     const subject = this.dataset.subject;

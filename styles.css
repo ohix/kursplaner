@@ -17,6 +17,17 @@ body {
     display: inline-block;
 }
 
+
+#array-length11, #array-length12 {
+    background-color: #7843f4;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.3rem 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+}
+
+
 /* --------------------------------------------------------------*/
 /* Style for subject buttons */
 .subject-button, #year11, #year12 {
@@ -68,7 +79,7 @@ body {
     background-color: #1F1F1F;
     border: 1rem;
     border-radius: 0.4rem;
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
 }
 
