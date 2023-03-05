@@ -233,6 +233,7 @@ let regel11 = false;
 let regel12 = false;
 let regel13 = false;
 let regel14 = false;
+let regel15 = false;
 
 //.---------------------------------------------------------------------------------------
 
@@ -272,7 +273,8 @@ inputFinishedButton.addEventListener('click', function() {
     let regel12 = false;
     let regel13 = false;
     let regel14 = false;
-    
+    let regel15 = false;
+
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
         console.log("regel1 = true");
@@ -713,10 +715,20 @@ inputFinishedButton.addEventListener('click', function() {
     }
 
     // ------------------
+    // Regel 15...
+
+    if (faecher11[0] === "Politikwissenschaften" || faecher11[1] === "Politikwissenschaften"){
+        logToPage("Politikwissenschaften darf nicht als Leistungsfach belegt werden");
+    }else{
+        regel15 = true;
+        console.log("regel15 = true")
+    }
+
+    // ------------------
 
     // ------------------
     
-    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true) {
         logToPageResult("    !!! ALLES GESCHAFFT !!!   ");
         logToPageResult("!!! Deine Wahl ist erlaubt !!!");
     } else {
