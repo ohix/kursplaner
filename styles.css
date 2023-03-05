@@ -99,12 +99,15 @@ body {
     background-color: #1F1F1F;
     border: 1rem;
     border-radius: 0.4rem;
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+    margin-right: 0.2rem;
+    font-size: 0.7rem;
     
 }  
 .feedbackbutton {
     background-color: #34addd;
+    color: white;
     border: 1rem; 
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
@@ -157,12 +160,12 @@ body {
     border: none;
     color: white;
     padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
     font-size: 0.7rem;
     margin-right: 0.2rem;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 0.4rem;
 }
 
