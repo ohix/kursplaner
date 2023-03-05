@@ -13,11 +13,11 @@
     <div class="menu">
         <h1>Kursplaner - Wähle deine Kurse!</h1>
         <p>Reihenfolge & Anzahl: LF1 / LF2 / 3.PF / 4.PF / 5.PK / Fach 6 / 7 / 8 / 9 / 10 (...)</p>
-        
-        <p> <strong>Eingabe des Kursjahres </strong></p>
-        
-        <button id="year11">Q1/Q2</button>
-        <button id="year12">Q3/Q4</button>
+        <div class="jahreswahl">
+            <p> <strong>Eingabe des Kursjahres </strong></p>
+            <button id="year11">Q1/Q2</button>
+            <button id="year12">Q3/Q4</button>
+        </div>
         <div class="faecherwahl">
             <h4>MINT</h4>
             <button type="button" class="subject-button" data-subject="Mathematik">Mathematik</button>
@@ -51,25 +51,22 @@
             <button type="button" class="subject-button" data-subject="Sport">Sport (Praxis)</button>
             <button type="button" class="subject-button" data-subject="SportTheorie">Sport-Theorie</button>    
         </div>
-    
-        <p></p>
-        <!-- display: inline-block shows array in same line as button -->
-        <div id="array-display11" style="display: inline-block;"></div>
-        <p></p>
-        <div id="array-display12"style="display: inline-block;"></div>
-        <!-- add more buttons here -->
-        <p> <strong>Eingabe bearbeiten</strong></p>
-        <!-- new button to indicate when input is finished -->
-        
-        <button id="remove-btn">Letzte Eingabe entfernen</button>
-        <button id="clear-btn">Eingabe Kursjahr löschen</button>
-        <button id="clear-All">Neustart</button>
-        <p></p>
-        <button id="input-finished">Überprüfung</button>
-        
-        <div id="feedback"></div>    
     </div>
-
+    <!-- display: inline-block shows array in same line as button -->
+    <div id="array-display11" style="display: inline-block;"></div>
+    <p></p>
+    <div id="array-display12"style="display: inline-block;"></div>
+    <!-- add more buttons here -->
+    <p> <strong>Eingabe bearbeiten</strong></p>
+    <!-- new button to indicate when input is finished -->
+    
+    <button id="remove-btn">Letzte Eingabe entfernen</button>
+    <button id="clear-btn">Eingabe Kursjahr löschen</button>
+    <button id="clear-All">Neustart</button>
+    <p></p>
+    <button id="input-finished">Überprüfung</button>
+    
+    <div id="feedback"></div>    
     <script type="text/javascript" src="kursplaner.js"></script>
     
     <div id="console-output"></div>
