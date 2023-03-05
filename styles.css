@@ -120,7 +120,6 @@ body {
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     margin-right: 0.2rem;
-    font-size: 0.7rem;
 } 
 
 #input-finished {
@@ -160,12 +159,6 @@ body {
     background-color: #591d2a;
 }
 
-@media only screen and (max-width: 3000px) {
-    button {
-        font-size: 20px;
-        padding: 12px 24px;
-    }
-}
 
 
 /* -------------------------------------------------- */
@@ -181,14 +174,23 @@ body {
 
 /* -------------------------------------------------- */
 
-.impressum {
-    background-color: #111010;
-    border: 1rem;
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.6rem;
+footer {
+
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 /* -------------------------------------------------- */
+
+
+@media only screen and (max-width: 3000px) {
+    button {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+}
