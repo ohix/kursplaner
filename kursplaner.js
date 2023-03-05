@@ -117,6 +117,14 @@ removeBtn.addEventListener('click', function() {
         arrayDisplay.textContent = faecher11.join(', ');
         const faecher11length = document.getElementById("array-length11");
         faecher11length.textContent = faecher11.length;
+
+        // User feedback entfernen
+        logs.length = 0;
+        const consoleOutput = document.getElementById("console-output");
+        consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+        logsResult.length = 0;
+        const consoleOutputResult = document.getElementById("console-output-result");
+        consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
     }else{
         faecher12.pop();
         console.log(faecher12);
@@ -129,6 +137,14 @@ removeBtn.addEventListener('click', function() {
         arrayDisplay12.textContent = faecher12.join(', ');
         const faecher12length = document.getElementById("array-length12");
         faecher12length.textContent = faecher12.length;
+        
+        // User feedback entfernen
+        logs.length = 0;
+        const consoleOutput = document.getElementById("console-output");
+        consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+        logsResult.length = 0;
+        const consoleOutputResult = document.getElementById("console-output-result");
+        consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
     }
 });
 //----------------------------------------------------------------------------------------
