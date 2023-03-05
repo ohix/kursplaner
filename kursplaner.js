@@ -236,7 +236,7 @@ let regel14 = false;
 
 //.---------------------------------------------------------------------------------------
 
-let logs = [];
+let logs = [""];
 
 function logToPage(message) {
     logs.push(message);
@@ -248,7 +248,7 @@ function logToPage(message) {
 // input finish button
 inputFinishedButton.addEventListener('click', function() {
 
-    logs.length = 0;
+    logs.length = 1;
 
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
@@ -271,7 +271,7 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
-        logToPage("regel1 = true");
+        console.log("regel1 = true");
     } else {
         logToPage("LK1, LK2, 3.-5.PK muessen in Jahren 11 und 12 gleich sein, nicht geschafft");
     }
@@ -281,7 +281,7 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (faecher11[0] === "Deutsch" || faecher11[0] === "Mathematik" || faecher11[0] === "Spanisch" || faecher11[0] === "Englisch" || faecher11[0] === "Physik" || faecher11[0] === "Chemie" || faecher11[0] === "Biologie" || faecher11[1] === "Deutsch" || faecher11[1] === "Mathematik" || faecher11[1] === "Spanisch" || faecher11[1] === "Englisch" || faecher11[1] === "Physik" || faecher11[1] === "Chemie" || faecher11[1] === "Biologie") {
         regel2 = true;
-        logToPage("regel2 = true");
+        console.log("regel2 = true");
     } else {
         logToPage("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LK sein");
     }
@@ -305,7 +305,7 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (MaDe1 === 4) {
         regel3 = true;
-        logToPage("regel3 = true");
+        console.log("regel3 = true");
     } else {
         logToPage("Mathe und Deutsch müssen belegt werden, nicht geschafft");
     }
@@ -367,7 +367,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel4 = true;
         console.log("regel4 = true")
     } else {
-        console.log("Es muss eine Fremdsprache über 4 Semester belegt werden, nicht geschafft");
+        logToPage("Es muss eine Fremdsprache über 4 Semester belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -482,10 +482,10 @@ inputFinishedButton.addEventListener('click', function() {
             regel5 = true;
             console.log("regel5 = true")
         } else {
-            console.log("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
+            logToPage("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
         }
     } else {
-        console.log("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
+        logToPage("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -536,8 +536,8 @@ inputFinishedButton.addEventListener('click', function() {
         regel6 = true;
         console.log("regel6 = true")
     } else {
-        console.log("Eine Naturwissenschaft muss über 4 Semester belegt werden, nicht geschafft");
-        console.log("Bei der Wahl von Biologie muessen mindestens zusaetzlich 2 Semester Chemie oder Physik belegt werden");
+        logToPage("Eine Naturwissenschaft muss über 4 Semester belegt werden, nicht geschafft");
+        logToPage("Bei der Wahl von Biologie muessen mindestens zusaetzlich 2 Semester Chemie oder Physik belegt werden");
     }
     
     // ------------------
@@ -560,7 +560,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel7 = true;
         console.log("regel7 = true")
     } else {
-        console.log("Sport Praxis muss über 4 Semester belegt werden, nicht geschafft");
+        logToPage("Sport Praxis muss über 4 Semester belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -583,7 +583,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel8 = true;
         console.log("regel8 = true");
     } else {
-        console.log("Studium und Beruf darf nur im Semester 1. und 2. und SportTheorie darf nur im 3. und 4. belegt werden, nicht geschafft");
+        logToPage("Studium und Beruf darf nur im Semester 1. und 2. und SportTheorie darf nur im 3. und 4. belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -613,7 +613,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel9 = true;
         console.log("regel9 = true");
     } else {
-        console.log("2 von 3 folgenden Faechern müssen als LK und 3., 4. PF belegt werden: Mathe, Deutsch und Fremdsprache, nicht geschafft");
+        logToPage("2 von 3 folgenden Faechern müssen als LK und 3., 4. PF belegt werden: Mathe, Deutsch und Fremdsprache, nicht geschafft");
     }
     
     // ------------------
@@ -639,7 +639,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel10 = true;
         console.log("regel10 = true");
     } else {
-        console.log("Alle drei Af muessen von LK und 3,4,5 PK belegt werden, geschafft");
+        logToPage("Alle drei Af muessen von LK und 3,4,5 PK belegt werden, geschafft");
     }
     
     // ------------------
@@ -661,7 +661,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel11 = true;
         console.log("regel11 = true");
     } else {
-        console.log("Ein Kunstlerisches Fach muss 2 Semester belegt werden, nicht geschafft");
+        logToPage("Ein Kunstlerisches Fach muss 2 Semester belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -678,17 +678,17 @@ inputFinishedButton.addEventListener('click', function() {
         regel12 = true;
         console.log("regel12 = true");
     } else {
-        console.log("Geschichte muss in der 12. Klasse belegt werden, geschafft");
+        logToPage("Geschichte muss in der 12. Klasse belegt werden, geschafft");
     }
     
     // ------------------
     // Regel 13...
     
     if (faecher11[2] === "Wirtschaftswissenschaften"){
-        console.log("Wirtschaftswissenschaften darf nicht als 3.PF belegt werden")
+        console.log("Wirtschaftswissenschaften darf nicht als 3.PF belegt werden");
     }else{
-        regel13 = true;
-        console.log("regel13 = true")
+        console.log = true;
+        logToPage("regel13 = true")
     }
 
     // ------------------
@@ -703,9 +703,9 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (nosport === faecher11_0_5.length) {
         regel14 = true;
-        console.log("regel14 = true");
+        // console.log("regel14 = true");
     } else {
-        console.log("Sport darf nicht als LF, PF und 5.PK gewählt werden");
+        logToPage("Sport darf nicht als LF, PF und 5.PK gewählt werden");
     }
 
     // ------------------
@@ -713,10 +713,10 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     
     if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true) {
-        console.log("    !!! ALLES GESCHAFFT !!!   ");
-        console.log("!!! Deine Wahl ist erlaubt !!!");
+        logToPage("    !!! ALLES GESCHAFFT !!!   ");
+        logToPage("!!! Deine Wahl ist erlaubt !!!");
     } else {
-        console.log("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
+        logToPage("Fehler, du musst deine Wahl deiner Kurse leider berichtigen");
     }
     
     // ------------------
@@ -724,6 +724,7 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     
     const consoleOutput = document.getElementById("console-output");
-    consoleOutput.textContent = logs.join("\n");
+    // consoleOutput.textContent = logs.join("\n");
+    consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
 
 });
