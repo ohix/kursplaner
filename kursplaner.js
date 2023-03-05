@@ -236,13 +236,20 @@ let regel14 = false;
 
 //.---------------------------------------------------------------------------------------
 
+let logs = [];
 
+function logToPage(message) {
+    logs.push(message);
+}
 
 
 // --- Regeln ---
 
 // input finish button
 inputFinishedButton.addEventListener('click', function() {
+
+    logs.length = 0;
+
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
     faecher12_0_5 = faecher12.slice(0, 5);
@@ -264,9 +271,9 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
-        console.log("regel1 = true");
+        logToPage("regel1 = true");
     } else {
-        console.log("LK1, LK2, 3.-5.PK muessen in Jahren 11 und 12 gleich sein, nicht geschafft");
+        logToPage("LK1, LK2, 3.-5.PK muessen in Jahren 11 und 12 gleich sein, nicht geschafft");
     }
     
     // ------------------
@@ -274,9 +281,9 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (faecher11[0] === "Deutsch" || faecher11[0] === "Mathematik" || faecher11[0] === "Spanisch" || faecher11[0] === "Englisch" || faecher11[0] === "Physik" || faecher11[0] === "Chemie" || faecher11[0] === "Biologie" || faecher11[1] === "Deutsch" || faecher11[1] === "Mathematik" || faecher11[1] === "Spanisch" || faecher11[1] === "Englisch" || faecher11[1] === "Physik" || faecher11[1] === "Chemie" || faecher11[1] === "Biologie") {
         regel2 = true;
-        console.log("regel2 = true");
+        logToPage("regel2 = true");
     } else {
-        console.log("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LK sein");
+        logToPage("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LK sein");
     }
     
     // ------------------
@@ -298,9 +305,9 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (MaDe1 === 4) {
         regel3 = true;
-        console.log("regel3 = true");
+        logToPage("regel3 = true");
     } else {
-        console.log("Mathe und Deutsch müssen belegt werden, nicht geschafft");
+        logToPage("Mathe und Deutsch müssen belegt werden, nicht geschafft");
     }
     
     // ------------------
@@ -716,4 +723,7 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
     
+    const consoleOutput = document.getElementById("console-output");
+    consoleOutput.textContent = logs.join("\n");
+
 });
