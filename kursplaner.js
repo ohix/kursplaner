@@ -24,6 +24,8 @@ function addToFaecher11() {
     this.disabled = true;
     const arrayDisplay11 = document.getElementById('array-display11');
     arrayDisplay11.textContent = faecher11.join(', ');
+    const faecher11length = document.getElementById("array-length11");
+    faecher11length.textContent = faecher11.length;
 }
 
 function addToFaecher12() {
@@ -33,6 +35,8 @@ function addToFaecher12() {
     this.disabled = true;
     const arrayDisplay12 = document.getElementById('array-display12');
     arrayDisplay12.textContent = faecher12.join(', ');
+    const faecher12length = document.getElementById("array-length12");
+    faecher12length.textContent = faecher12.length;
 }
 
 function clearArray(faecherarray) {
@@ -79,6 +83,8 @@ year11.addEventListener('click', function() {
     clearBtn.addEventListener('click', function() {
         clearArray(faecher11);
         displayArray(faecher11);
+        const faecher11length = document.getElementById("array-length11");
+        faecher11length.textContent = faecher11.length;
     });
 });
 
@@ -95,6 +101,8 @@ removeBtn.addEventListener('click', function() {
         });
         const arrayDisplay = document.getElementById('array-display11');
         arrayDisplay.textContent = faecher11.join(', ');
+        const faecher11length = document.getElementById("array-length11");
+        faecher11length.textContent = faecher11.length;
     }else{
         faecher12.pop();
         console.log(faecher12);
@@ -105,6 +113,8 @@ removeBtn.addEventListener('click', function() {
         });
         const arrayDisplay12 = document.getElementById('array-display12');
         arrayDisplay12.textContent = faecher12.join(', ');
+        const faecher12length = document.getElementById("array-length12");
+        faecher12length.textContent = faecher12.length;
     }
 });
 //----------------------------------------------------------------------------------------
@@ -133,6 +143,8 @@ year12.addEventListener('click', function() {
     clearBtn.addEventListener('click', function() {
         clearArray(faecher12);
         displayArray(faecher12);
+        const faecher12length = document.getElementById("array-length12");
+        faecher12length.textContent = faecher12.length;
     });
 });
 
@@ -150,8 +162,12 @@ clearAll.addEventListener('click', function() {
     });
     const arrayDisplay11 = document.getElementById('array-display11');
     arrayDisplay11.textContent = '';
+    const faecher11length = document.getElementById("array-length11");
+    faecher11length.textContent = faecher11.length;
     const arrayDisplay12 = document.getElementById('array-display12');
     arrayDisplay12.textContent = '';
+    const faecher12length = document.getElementById("array-length12");
+    faecher12length.textContent = faecher12.length;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher11);
         button.removeEventListener('click', addToFaecher12);
