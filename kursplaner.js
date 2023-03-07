@@ -64,12 +64,12 @@ function displayArray(faecherarray) {
 
 // User feedback entfernen
 function clearLogs() {
-  logs.length = 0;
-  const consoleOutput = document.getElementById("console-output");
-  consoleOutput.innerHTML = "";
-  logsResult.length = 0;
-  const consoleOutputResult = document.getElementById("console-output-result");
-  consoleOutputResult.innerHTML = "";
+    logs.length = 0;
+    const consoleOutput = document.getElementById("console-output");
+    consoleOutput.innerHTML = "";
+    logsResult.length = 0;
+    const consoleOutputResult = document.getElementById("console-output-result");
+    consoleOutputResult.innerHTML = "";
 }
 
 // Versuch Eingabe für 11. Klasse
@@ -120,7 +120,7 @@ removeBtn.addEventListener('click', function() {
         arrayDisplay.textContent = faecher11.join(', ');
         const faecher11length = document.getElementById("array-length11");
         faecher11length.textContent = faecher11.length;
-
+        
         // User feedback entfernen
         clearLogs();
     }else{
@@ -169,7 +169,7 @@ year12.addEventListener('click', function() {
             displayArray(faecher12);
             const faecher12length = document.getElementById("array-length12");
             faecher12length.textContent = faecher12.length;
-
+            
             // User feedback entfernen
             clearLogs();
         }
@@ -182,7 +182,7 @@ let logsResult = [];
 // Neustart button
 const clearAll = document.getElementById('clear-All');
 clearAll.addEventListener('click', function() {
-
+    
     faecher11.length = 0;
     faecher12.length = 0;
     buttons.forEach(button => {
@@ -202,7 +202,7 @@ clearAll.addEventListener('click', function() {
     });
     year11.disabled = false;
     year12.disabled = false;
-
+    
     // User feedback entfernen
     clearLogs();
 });
@@ -307,10 +307,10 @@ function logToPageResult(message) {
 
 // input finish button
 inputFinishedButton.addEventListener('click', function() {
-
+    
     logs.length = 1;
     logsResult.length = 1;
-
+    
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
     faecher12_0_5 = faecher12.slice(0, 5);
@@ -330,7 +330,7 @@ inputFinishedButton.addEventListener('click', function() {
     let regel13 = false;
     let regel14 = false;
     let regel15 = false;
-
+    
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
         console.log("regel1 = true");
@@ -538,7 +538,7 @@ inputFinishedButton.addEventListener('click', function() {
             }
         }
     }
-
+    
     if (Af268K >= 1) {
         if (Fach2PW === 2 || Fach2WW === 2 || Fach2Ge === 2 || Fach2Geo === 2 || Fach2Ph === 2) {
             regel5 = true;
@@ -752,7 +752,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel13 = true;
         console.log("regel13 = true")
     }
-
+    
     // ------------------
     // Regel 14...
     
@@ -769,19 +769,19 @@ inputFinishedButton.addEventListener('click', function() {
     } else {
         console.log("Sport darf nicht als LF, PF und 5.PK gewählt werden");
     }
-
+    
     // ------------------
     // Regel 15...
-
+    
     if (faecher11[0] === "Politikwissenschaften" || faecher11[1] === "Politikwissenschaften"){
         logToPage("Politikwissenschaften darf nicht als Leistungsfach belegt werden");
     }else{
         regel15 = true;
         console.log("regel15 = true")
     }
-
+    
     // ------------------
-
+    
     // ------------------
     
     if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true) {
@@ -794,12 +794,12 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     
     // ------------------
-
+    
     // User feedback entfernen
     const consoleOutputResult = document.getElementById("console-output-result");
     // consoleOutput.textContent = logs.join("\n");
     consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
-
+    
     // ------------------
     const consoleOutput = document.getElementById("console-output");
     // consoleOutput.textContent = logs.join("\n");
