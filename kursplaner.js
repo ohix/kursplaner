@@ -797,5 +797,12 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
 
     // User feedback entfernen
-    clearLogs();
+    const consoleOutputResult = document.getElementById("console-output-result");
+    // consoleOutput.textContent = logs.join("\n");
+    consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+
+    // ------------------
+    const consoleOutput = document.getElementById("console-output");
+    // consoleOutput.textContent = logs.join("\n");
+    consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
 });
