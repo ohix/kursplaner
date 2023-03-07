@@ -63,6 +63,15 @@ function displayArray(faecherarray) {
     }
 }
 
+// User feedback entfernen
+function clearLogs() {
+  logs.length = 0;
+  const consoleOutput = document.getElementById("console-output");
+  consoleOutput.innerHTML = "";
+  logsResult.length = 0;
+  const consoleOutputResult = document.getElementById("console-output-result");
+  consoleOutputResult.innerHTML = "";
+}
 
 // Versuch Eingabe für 11. Klasse
 year11.addEventListener('click', function() {
@@ -92,12 +101,7 @@ year11.addEventListener('click', function() {
             faecher11length.textContent = faecher11.length;
             
             // User feedback entfernen
-            logs.length = 0;
-            const consoleOutput = document.getElementById("console-output");
-            consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-            logsResult.length = 0;
-            const consoleOutputResult = document.getElementById("console-output-result");
-            consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+            clearLogs();
         }
     });
 });
@@ -119,12 +123,7 @@ removeBtn.addEventListener('click', function() {
         faecher11length.textContent = faecher11.length;
 
         // User feedback entfernen
-        logs.length = 0;
-        const consoleOutput = document.getElementById("console-output");
-        consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-        logsResult.length = 0;
-        const consoleOutputResult = document.getElementById("console-output-result");
-        consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+        clearLogs();
     }else{
         faecher12.pop();
         console.log(faecher12);
@@ -139,12 +138,7 @@ removeBtn.addEventListener('click', function() {
         faecher12length.textContent = faecher12.length;
         
         // User feedback entfernen
-        logs.length = 0;
-        const consoleOutput = document.getElementById("console-output");
-        consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-        logsResult.length = 0;
-        const consoleOutputResult = document.getElementById("console-output-result");
-        consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+        clearLogs();
     }
 });
 //----------------------------------------------------------------------------------------
@@ -178,12 +172,7 @@ year12.addEventListener('click', function() {
             faecher12length.textContent = faecher12.length;
 
             // User feedback entfernen
-            logs.length = 0;
-            const consoleOutput = document.getElementById("console-output");
-            consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-            logsResult.length = 0;
-            const consoleOutputResult = document.getElementById("console-output-result");
-            consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+            clearLogs();
         }
     });
 });
@@ -216,12 +205,7 @@ clearAll.addEventListener('click', function() {
     year12.disabled = false;
 
     // User feedback entfernen
-    logs.length = 0;
-    const consoleOutput = document.getElementById("console-output");
-    consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-    logsResult.length = 0;
-    const consoleOutputResult = document.getElementById("console-output-result");
-    consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
+    clearLogs();
 });
 
 // remove last element of array
@@ -812,13 +796,6 @@ inputFinishedButton.addEventListener('click', function() {
     
     // ------------------
 
-    const consoleOutputResult = document.getElementById("console-output-result");
-    // consoleOutput.textContent = logs.join("\n");
-    consoleOutputResult.innerHTML = logsResult.map(message => `${message}<br>`).join('--');
-
-    // ------------------
-    const consoleOutput = document.getElementById("console-output");
-    // consoleOutput.textContent = logs.join("\n");
-    consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
-
+    // User feedback entfernen
+    clearLogs();
 });
