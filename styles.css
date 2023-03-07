@@ -123,7 +123,7 @@ body {
 } 
 
 #input-finished {
-    background-color: #34addd;
+    background-color: #03DAC6;
     color: white;
     border: 1rem; 
     border-radius: 0.4rem;
@@ -142,7 +142,7 @@ body {
 }
 
 #remove-btn, #clear-btn, #clear-All {
-    background-color: #da5975;
+    background-color: #CF6679;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
