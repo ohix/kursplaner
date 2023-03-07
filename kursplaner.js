@@ -335,7 +335,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel1 = true;
         console.log("regel1 = true");
     } else {
-        logToPage("LK1, LK2, 3.-5.PK muessen in Jahren 11 und 12 gleich sein, nicht geschafft");
+        logToPage("LF1, LF2, 3.PF, 4.PF, 5.PK müssen in Jahren 11 und 12 gleich sein");
     }
     
     // ------------------
@@ -345,7 +345,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel2 = true;
         console.log("regel2 = true");
     } else {
-        logToPage("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LK sein");
+        logToPage("Eines der folgenden Faecher:'De, Ma, Sp, En, Ph, Ch, Bi' muss ein LF sein");
     }
     
     // ------------------
@@ -369,7 +369,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel3 = true;
         console.log("regel3 = true");
     } else {
-        logToPage("Mathe und Deutsch müssen belegt werden, nicht geschafft");
+        logToPage("Mathe und Deutsch müssen belegt werden");
     }
     
     // ------------------
@@ -429,7 +429,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel4 = true;
         console.log("regel4 = true")
     } else {
-        logToPage("Es muss eine Fremdsprache über 4 Semester belegt werden, nicht geschafft");
+        logToPage("Es muss eine Fremdsprache über 4 Semester belegt werden");
     }
     
     // ------------------
@@ -544,10 +544,10 @@ inputFinishedButton.addEventListener('click', function() {
             regel5 = true;
             console.log("regel5 = true")
         } else {
-            logToPage("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
+            logToPage("6-8 Semester müssen 2 Fächer des 2.AF (Ge,Geo,WW,PW,Phi) belegt werden");
         }
     } else {
-        logToPage("6-8 Semester muessen 2 Faecher des 2.AF belegt werden, nicht geschafft");
+        logToPage("6-8 Semester müssen 2 Fächer des 2.AF (Ge,Geo,WW,PW,Phi) belegt werden");
     }
     
     // ------------------
@@ -598,8 +598,8 @@ inputFinishedButton.addEventListener('click', function() {
         regel6 = true;
         console.log("regel6 = true")
     } else {
-        logToPage("Eine Naturwissenschaft muss über 4 Semester belegt werden, nicht geschafft");
-        logToPage("Bei der Wahl von Biologie muessen mindestens zusaetzlich 2 Semester Chemie oder Physik belegt werden");
+        logToPage("Eine Naturwissenschaft muss über 4 Semester belegt werden");
+        logToPage("Bei der Wahl von Biologie müssen mindestens zusätzlich 2 Semester Chemie oder Physik belegt werden");
     }
     
     // ------------------
@@ -622,7 +622,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel7 = true;
         console.log("regel7 = true")
     } else {
-        logToPage("Sport Praxis muss über 4 Semester belegt werden, nicht geschafft");
+        logToPage("Sport Praxis muss über 4 Semester belegt werden");
     }
     
     // ------------------
@@ -645,7 +645,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel8 = true;
         console.log("regel8 = true");
     } else {
-        logToPage("Studium und Beruf darf nur im Semester 1. und 2. und SportTheorie darf nur im 3. und 4. belegt werden, nicht geschafft");
+        logToPage("Studium und Beruf darf nur im Semester 1&2 und SportTheorie darf nur im 3&4 belegt werden");
     }
     
     // ------------------
@@ -675,7 +675,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel9 = true;
         console.log("regel9 = true");
     } else {
-        logToPage("2 von 3 folgenden Faechern müssen als LK und 3., 4. PF belegt werden: Mathe, Deutsch und Fremdsprache, nicht geschafft");
+        logToPage("2 von 3 folgenden Fächern müssen als LF und 3., 4. PF belegt werden: Mathe, Deutsch und Fremdsprache");
     }
     
     // ------------------
@@ -701,7 +701,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel10 = true;
         console.log("regel10 = true");
     } else {
-        logToPage("Alle drei Af muessen von LK und 3,4,5 PK belegt werden, geschafft");
+        logToPage("Alle drei Af müssen von LK und 3,4,5 PK belegt werden, geschafft");
     }
     
     // ------------------
@@ -723,7 +723,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel11 = true;
         console.log("regel11 = true");
     } else {
-        logToPage("Ein Kunstlerisches Fach muss 2 Semester belegt werden, nicht geschafft");
+        logToPage("Ein Künstlerisches Fach muss 2 Semester belegt werden");
     }
     
     // ------------------
@@ -740,7 +740,7 @@ inputFinishedButton.addEventListener('click', function() {
         regel12 = true;
         console.log("regel12 = true");
     } else {
-        logToPage("Geschichte muss in der 12. Klasse belegt werden, nicht geschafft");
+        logToPage("Geschichte muss in der 12. Klasse belegt werden");
     }
     
     // ------------------
