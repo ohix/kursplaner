@@ -309,13 +309,18 @@ function logToPageResult(message) {
 // input finish button
 inputFinishedButton.addEventListener('click', function() {
     
+    console.log("---------------------------------------------------------------")
+
     logs.length = 1;
     logsResult.length = 1;
-    
-    faecher11_0_4 = faecher11.slice(0, 4);
-    faecher11_0_5 = faecher11.slice(0, 5);
-    faecher12_0_5 = faecher12.slice(0, 5);
-    faecher12_0_3 = faecher12.slice(0, 3);
+
+    let faecher11_0_5 = faecher11.slice(0, 5);
+    let faecher11_0_4 = faecher11.slice(0, 4);
+    let faecher11_0_3 = faecher11.slice(0, 3);
+
+    let faecher12_0_5 = faecher12.slice(0, 5);
+    let faecher12_0_4 = faecher12.slice(0, 4);
+    let faecher12_0_3 = faecher12.slice(0, 3);
     
     let regel1 = false;
     let regel2 = false; 
@@ -336,8 +341,19 @@ inputFinishedButton.addEventListener('click', function() {
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
+    }
+    if ((JSON.stringify(faecher11_0_4) === JSON.stringify(faecher12_0_4)) && faecher12_0_5[4] === "SportTheorie") {
+        regel1 = true;
+    }
+    if ((JSON.stringify(faecher11_0_3) === JSON.stringify(faecher12_0_3)) && (faecher12_0_4[3] === "SportTheorie") && (faecher11_0_5[4] === faecher12_0_5[4])) {
+        regel1 = true;
+    }
+
+    if(regel1 === true) {
         console.log("regel1 = true");
-    } else {
+    }
+
+    if(regel1 === false) {
         logToPage("LF1, LF2, 3.PF, 4.PF, 5.PK müssen in Jahren 11 und 12 gleich sein");
     }
     
