@@ -291,6 +291,7 @@ let regel12 = false;
 let regel13 = false;
 let regel14 = false;
 let regel15 = false;
+let regel16 = false;
 
 //.---------------------------------------------------------------------------------------
 
@@ -314,6 +315,7 @@ inputFinishedButton.addEventListener('click', function() {
     faecher11_0_4 = faecher11.slice(0, 4);
     faecher11_0_5 = faecher11.slice(0, 5);
     faecher12_0_5 = faecher12.slice(0, 5);
+    faecher12_0_3 = faecher12.slice(0, 3);
     
     let regel1 = false;
     let regel2 = false; 
@@ -330,6 +332,7 @@ inputFinishedButton.addEventListener('click', function() {
     let regel13 = false;
     let regel14 = false;
     let regel15 = false;
+    let regel16 = false;
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
@@ -781,10 +784,27 @@ inputFinishedButton.addEventListener('click', function() {
     }
     
     // ------------------
+    // Regel 16...
+    
+    let noSpTh = 0;
+    for (let s of faecher12_0_3) {
+        if (s !== "SportTheorie"){
+            noSpTh++;
+        }  
+    }
+
+    if (noSpTh === faecher12_0_3.length) {
+        regel16 = true;
+        console.log("regel16 = true");
+    } else {
+        logToPage("Sport Theorie darf nicht als LF und 3. PF und gewählt werden");
+    }
     
     // ------------------
+
+    // ------------------
     
-    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true && regel16 === true) {
         logToPageResult("    !!! ALLES GESCHAFFT !!!   ");
         logToPageResult("!!! Deine Wahl ist erlaubt !!!");
     } else {
