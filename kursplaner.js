@@ -10,7 +10,6 @@ const inputFinishedButton = document.getElementById('input-finished');
 
 const year11 = document.getElementById('year11'); 
 const year12 = document.getElementById('year12');
-const feedback = document.getElementById('feedback');
 const clearBtn = document.getElementById('clear-btn');
 
 let activeArray11 = null;
