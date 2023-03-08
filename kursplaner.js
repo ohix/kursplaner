@@ -15,10 +15,18 @@ const clearBtn = document.getElementById('clear-btn');
 let activeArray11 = null;
 let activeArray12 = null;
 
-const faecher11length = document.getElementById("array-length11");
-faecher11length.textContent = faecher11.length;
-const faecher12length = document.getElementById("array-length12");
-faecher12length.textContent = faecher12.length;
+function displayArrayLength(array, elementId) {
+    const arrayLengthElement = document.getElementById(elementId);
+    arrayLengthElement.textContent = array.length;
+}
+
+displayArrayLength(faecher11,"array-length11");
+displayArrayLength(faecher12,"array-length12");
+
+// const faecher11length = document.getElementById("array-length11");
+// faecher11length.textContent = faecher11.length;
+// const faecher12length = document.getElementById("array-length12");
+// faecher12length.textContent = faecher12.length;
 
 function addToFaecher11() {
     const subject = this.dataset.subject;
@@ -27,8 +35,9 @@ function addToFaecher11() {
     this.disabled = true;
     const arrayDisplay11 = document.getElementById('array-display11');
     arrayDisplay11.textContent = faecher11.join(', ');
-    const faecher11length = document.getElementById("array-length11");
-    faecher11length.textContent = faecher11.length;
+    // const faecher11length = document.getElementById("array-length11");
+    // faecher11length.textContent = faecher11.length;
+    displayArrayLength(faecher11,"array-length11");
 }
 
 function addToFaecher12() {
@@ -38,8 +47,9 @@ function addToFaecher12() {
     this.disabled = true;
     const arrayDisplay12 = document.getElementById('array-display12');
     arrayDisplay12.textContent = faecher12.join(', ');
-    const faecher12length = document.getElementById("array-length12");
-    faecher12length.textContent = faecher12.length;
+    // const faecher12length = document.getElementById("array-length12");
+    // faecher12length.textContent = faecher12.length;
+    displayArrayLength(faecher12,"array-length12");
 }
 
 function clearArray(faecherarray) {
@@ -96,9 +106,9 @@ year11.addEventListener('click', function() {
         if (activeArray11 === true && activeArray12 === false) {
             clearArray(faecher11);
             displayArray(faecher11);
-            const faecher11length = document.getElementById("array-length11");
-            faecher11length.textContent = faecher11.length;
-            
+            // const faecher11length = document.getElementById("array-length11");
+            // faecher11length.textContent = faecher11.length;
+            displayArrayLength(faecher11,"array-length11");            
             // User feedback entfernen
             clearLogs();
         }
@@ -118,8 +128,9 @@ removeBtn.addEventListener('click', function() {
         });
         const arrayDisplay = document.getElementById('array-display11');
         arrayDisplay.textContent = faecher11.join(', ');
-        const faecher11length = document.getElementById("array-length11");
-        faecher11length.textContent = faecher11.length;
+        // const faecher11length = document.getElementById("array-length11");
+        // faecher11length.textContent = faecher11.length;
+        displayArrayLength(faecher11,"array-length11");
         
         // User feedback entfernen
         clearLogs();
@@ -133,8 +144,9 @@ removeBtn.addEventListener('click', function() {
         });
         const arrayDisplay12 = document.getElementById('array-display12');
         arrayDisplay12.textContent = faecher12.join(', ');
-        const faecher12length = document.getElementById("array-length12");
-        faecher12length.textContent = faecher12.length;
+        // const faecher12length = document.getElementById("array-length12");
+        // faecher12length.textContent = faecher12.length;
+        displayArrayLength(faecher12,"array-length12");
         
         // User feedback entfernen
         clearLogs();
@@ -167,8 +179,9 @@ year12.addEventListener('click', function() {
         if (activeArray11 === false && activeArray12 === true) {
             clearArray(faecher12);
             displayArray(faecher12);
-            const faecher12length = document.getElementById("array-length12");
-            faecher12length.textContent = faecher12.length;
+            // const faecher12length = document.getElementById("array-length12");
+            // faecher12length.textContent = faecher12.length;
+            displayArrayLength(faecher12,"array-length12");
             
             // User feedback entfernen
             clearLogs();
@@ -188,14 +201,19 @@ clearAll.addEventListener('click', function() {
     buttons.forEach(button => {
         button.disabled = false;
     });
-    const arrayDisplay11 = document.getElementById('array-display11');
-    arrayDisplay11.textContent = '';
-    const faecher11length = document.getElementById("array-length11");
-    faecher11length.textContent = faecher11.length;
-    const arrayDisplay12 = document.getElementById('array-display12');
-    arrayDisplay12.textContent = '';
-    const faecher12length = document.getElementById("array-length12");
-    faecher12length.textContent = faecher12.length;
+
+    displayArray(faecher11);
+    // const arrayDisplay11 = document.getElementById('array-display11');
+    // arrayDisplay11.textContent = '';
+    displayArrayLength(faecher11,"array-length11");
+    // const faecher11length = document.getElementById("array-length11");
+    // faecher11length.textContent = faecher11.length;
+    displayArray(faecher12);
+    // const arrayDisplay12 = document.getElementById('array-display12');
+    // arrayDisplay12.textContent = '';
+    displayArrayLength(faecher12,"array-length12");
+    // const faecher12length = document.getElementById("array-length12");
+    // faecher12length.textContent = faecher12.length;
     buttons.forEach(button => {
         button.removeEventListener('click', addToFaecher11);
         button.removeEventListener('click', addToFaecher12);
