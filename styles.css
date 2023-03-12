@@ -129,16 +129,26 @@ body {
     border: 1rem; 
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
-    margin-right: 1rem;
+    margin-right: 0.2rem;
     font-size: 0.7rem;
     
 }
 
-#input-finished:hover{
+#pdf {
+    background-color: #03DAC6;
+    color: white;
+    border: 1rem; 
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-size: 0.7rem;
+}
+
+#input-finished:hover,#pdf:hover{
     background-color: #21708f;
 }
 
-#input-finished:active{
+#input-finished:active,#pdf:active{
     background-color: #16485b;
 }
 

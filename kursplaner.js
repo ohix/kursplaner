@@ -1,8 +1,39 @@
+
+
+// import { PDFDocument, StandardFonts } from 'pdf-lib';
+
+// async function fillInPdfForm() {
+//     // ...
+//     // const response = await fetch('https://melanchthon-schule-berlin.de/images/stories/plaene/Uebersichtsplan_Kurshalbjahre_2023.pdf');
+//     // const data = await response.json();
+
+
+//     const pdfBytes = await fetch('https://melanchthon-schule-berlin.de/images/stories/plaene/Uebersichtsplan_Kurshalbjahre_2023.pdf').then(res => res.arrayBuffer());
+//     const pdfDoc = await PDFDocument.load(pdfBytes);
+//     // const form = pdfDoc.getForm();
+    
+//     // Set the value of a form field
+//     // form.getTextField('Name').setText(data.name);
+//     // form.getTextField('Email').setText(data.email);
+    
+//     // Save the filled-in PDF to a file
+//     const filledInPdfBytes = await pdfDoc.save();
+//     const blob = new Blob([filledInPdfBytes], { type: 'application/pdf' });
+//     const url = URL.createObjectURL(blob);
+//     window.location.href = url;
+    
+//     // Or send the filled-in PDF back to the client
+//     // res.setHeader('Content-Type', 'application/pdf');
+//     // res.send(filledInPdfBytes);
+// }
+
+
+
 // Define an empty array to store the strings
-const faecher11 = [];
+export const faecher11 = [];
 let faecher11_0_4 = [];
 let faecher11_0_5 = [];
-const faecher12 = [];
+export const faecher12 = [];
 let faecher12_0_5 = [];
 
 const buttons = document.querySelectorAll('.subject-button');
@@ -294,22 +325,9 @@ clearAll.addEventListener('click', function() {
 // let faecher12_0_4 = faecher12.slice(0, 5);
 // let faecher12_0_5 = faecher12.slice(0, 6);
 
-let regel1 = false;
-let regel2 = false; 
-let regel3 = false;
-let regel4 = false;
-let regel5 = false;
-let regel6 = false;
-let regel7 = false;
-let regel8 = false;
-let regel9 = false;
-let regel10 = false;
-let regel11 = false;
-let regel12 = false;
-let regel13 = false;
-let regel14 = false;
-let regel15 = false;
-let regel16 = false;
+
+
+export let regel_alle = false;
 
 //.---------------------------------------------------------------------------------------
 
@@ -321,6 +339,10 @@ function logToPage(message) {
 function logToPageResult(message) {
     logsResult.push(message);
 }
+
+export const variableName = 'aahh';
+// export const variableNam = 'some value';
+
 
 // --- Regeln ---
 
@@ -356,6 +378,9 @@ inputFinishedButton.addEventListener('click', function() {
     let regel14 = false;
     let regel15 = false;
     let regel16 = false;
+    let regel17 = false;
+
+    regel_alle = false;
     
     if (JSON.stringify(faecher11_0_5) === JSON.stringify(faecher12_0_5)) {
         regel1 = true;
@@ -835,12 +860,29 @@ inputFinishedButton.addEventListener('click', function() {
     }
     
     // ------------------
+    // Regel 16...
+
+    if ((faecher11.length === 10) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
+        regel17 = true;
+    }
+    if ((faecher11.length === 11) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
+        regel17 = true;
+    }
+    if ((faecher11.length === 12) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
+        regel17 = true;
+    }
+
+    if (regel17 === false) {
+        logToPage("Anzahl der gewählten Kurse anpassen");
+    }
+    // ------------------
 
     // ------------------
     
-    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true && regel16 === true) {
+    if (regel1 === true && regel2 === true && regel3 === true && regel4 === true && regel5 === true && regel6 === true && regel7 === true && regel8 === true && regel9 === true && regel10 === true && regel11 === true && regel12 === true && regel13 === true && regel14 === true && regel15 === true && regel16 === true && regel17 === true) {
         logToPageResult("    !!! ALLES GESCHAFFT !!!   ");
         logToPageResult("!!! Deine Wahl ist erlaubt !!!");
+        regel_alle = true;
     } else {
         logToPageResult("Du solltest die Wahl deiner Kurse leider berichtigen.");
     }
@@ -858,4 +900,18 @@ inputFinishedButton.addEventListener('click', function() {
     const consoleOutput = document.getElementById("console-output");
     // consoleOutput.textContent = logs.join("\n");
     consoleOutput.innerHTML = logs.map(message => `${message}<br>`).join('--');
+    
+    // ---------------------------------------------------------------------------------------------------------------
+    
+    
+    // import { PDFDocument, StandardFonts } from 'pdf-lib';
+    
+    // async function fillInPdfForm() {
+    //     const response = await fetch('https://example.com/data');
+    //     const data = await response.json();
+        
+    //     // ...
+    // }
+    
+    // fillInPdfForm();
 });
