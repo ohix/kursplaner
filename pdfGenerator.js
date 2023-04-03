@@ -125,6 +125,10 @@ modifyPdf.addEventListener('click', function() {
                 firstPage.drawText('X',{x: 300,y: 229,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
                 firstPage.drawText('X',{x: 328,y: 229,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
             }
+            if (s === "SportTheorie") {
+                firstPage.drawText('X',{x: 300,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
+                firstPage.drawText('X',{x: 328,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
+            }
         }
         // -------------------------
         // 12. Klasse Fächer markieren
@@ -462,7 +466,7 @@ modifyPdf.addEventListener('click', function() {
             firstPage.drawText('4.PF',{x: 238,y: 229,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
         }
         if (faecher11[3] === "SportTheorie") {
-            firstPage.drawText('4.PF',{x: 238,y: 110,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
+            firstPage.drawText('4.PF',{x: 238,y: 114,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
         }
 
         // -------------------------
@@ -526,7 +530,7 @@ modifyPdf.addEventListener('click', function() {
             firstPage.drawText('5.PF',{x: 238,y: 229,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
         }
         if (faecher11[4] === "SportTheorie") {
-            firstPage.drawText('5.PF',{x: 238,y: 110,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
+            firstPage.drawText('5.PF',{x: 238,y: 114,size: 10,font: helveticaFont,color: rgb(0, 0, 0),})
         }
 
 
