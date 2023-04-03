@@ -356,7 +356,10 @@ inputFinishedButton.addEventListener('click', function() {
 
     let faecher11_0_5 = faecher11.slice(0, 5);
     let faecher11_0_4 = faecher11.slice(0, 4);
+    // darunter macht Stelle 0,1,2
     let faecher11_0_3 = faecher11.slice(0, 3);
+    // darunter nur für Sport Theorie
+    let faecher11_5_End = faecher11.slice(5, faecher11.length);
 
     let faecher12_0_5 = faecher12.slice(0, 5);
     let faecher12_0_4 = faecher12.slice(0, 4);
@@ -690,24 +693,19 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     // Regel 8...
     
-    let nostsp = 0;
-    for (let s of faecher11) {
-        if (s !== "SportTheorie") {
-            nostsp++;
-        }
-    }
-    
+    let noStBe = 0;
+
     for (let s of faecher12) {
         if (s !== "StudiumBeruf") {
-            nostsp++;
+            noStBe++;
         }
     }
     
-    if (nostsp === faecher11.length + faecher12.length) {
+    if (noStBe === faecher12.length) {
         regel8 = true;
         console.log("regel8 = true");
     } else {
-        logToPage("Studium und Beruf darf nur im Semester 1&2 und SportTheorie darf nur im 3&4 belegt werden");
+        logToPage("Studium und Beruf darf nur im Semester 1&2 belegt werden");
     }
     
     // ------------------
@@ -845,14 +843,14 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     // Regel 16...
     
-    let noSpTh = 0;
+    let noSpTh12 = 0;
     for (let s of faecher12_0_3) {
         if (s !== "SportTheorie"){
-            noSpTh++;
+            noSpTh12++;
         }  
     }
 
-    if (noSpTh === faecher12_0_3.length) {
+    if (noSpTh12 === faecher12_0_3.length) {
         regel16 = true;
         console.log("regel16 = true");
     } else {
@@ -860,7 +858,7 @@ inputFinishedButton.addEventListener('click', function() {
     }
     
     // ------------------
-    // Regel 16...
+    // Regel 17...
 
     if ((faecher11.length === 10) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
         regel17 = true;
@@ -875,6 +873,30 @@ inputFinishedButton.addEventListener('click', function() {
     if (regel17 === false) {
         logToPage("Anzahl der gewählten Kurse anpassen");
     }
+
+    // ------------------
+    // Regel 18...
+
+    let noSpTh11 = 0;
+    for (let s of faecher11_0_3) {
+        if (s !== "SportTheorie") {
+            noSpTh11++;
+        }
+    }
+
+    for (let s of faecher11_5_End) {
+        if (s !== "SportTheorie") {
+            noSpTh11++;
+        }
+    }
+    
+    if (noSpTh11 === faecher11_0_3.length + faecher11_5_End.length) {
+        regel8 = true;
+        console.log("regel18 = true");
+    } else {
+        logToPage("SportTheorie darf im 1./2. Semester nur als 4.PF und als 5.PK belegt werden");
+    }
+
     // ------------------
 
     // ------------------
