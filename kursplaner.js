@@ -51,6 +51,9 @@ function displayArrayLength(array, elementId) {
     arrayLengthElement.textContent = array.length;
 }
 
+
+
+
 displayArrayLength(faecher11,"array-length11");
 displayArrayLength(faecher12,"array-length12");
 

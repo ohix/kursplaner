@@ -125,10 +125,10 @@ modifyPdf.addEventListener('click', function() {
                 firstPage.drawText('X',{x: 300,y: 229,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
                 firstPage.drawText('X',{x: 328,y: 229,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
             }
-            if (s === "SportTheorie") {
-                firstPage.drawText('X',{x: 300,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
-                firstPage.drawText('X',{x: 328,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
-            }
+            // if (s === "SportTheorie") {
+            //     firstPage.drawText('X',{x: 300,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
+            //     firstPage.drawText('X',{x: 328,y: 115,size: 25,font: helveticaFont,color: rgb(0, 0, 0),})
+            // }
         }
         // -------------------------
         // 12. Klasse Fächer markieren
@@ -587,8 +587,489 @@ modifyPdf.addEventListener('click', function() {
         firstPage.drawText(WochenstundeninsgesamtString,{x: 267,y: 92,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
 
         // --------------------------------------------------------------------------------------------------------------------
+        // Zeile deuten und notieren 
+        console.log("Zeilenauswertung beginnt")
+        let faecher11_0_5 = faecher11.slice(0, 5);
+        console.log(faecher11_0_5)
+        let output = false;
+
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && faecher11_0_5[1] === "Deutsch") || ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && faecher11_0_5[0] === "Deutsch")) {
+            console.log("Zeile1-3")
+            if (faecher11_0_5[3] === "Mathematik") {
+                firstPage.drawText('1',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[3] === "Chemie" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                firstPage.drawText('2',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[3] === "Informatik") {
+                firstPage.drawText('3',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[2] === "Mathematik") {
+                    firstPage.drawText('1',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[2] === "Chemie" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                    firstPage.drawText('2',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[2] === "Informatik") {
+                    firstPage.drawText('3',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('1',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Chemie" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                    firstPage.drawText('2',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Informatik") {
+                    firstPage.drawText('3',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && (faecher11_0_5[1] === "BildendeKunst" || faecher11_0_5[1] === "Musik")) || ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && (faecher11_0_5[0] === "BildendeKunst" || faecher11_0_5[0] === "Musik"))) {
+            console.log("Zeile7-9")
+            for (let s in faecher11_0_5){
+                if (s === "Deutsch") {
+                    for (let sd in faecher11_0_5){
+                        if (sd === "Chemie" || sd === "Biologie" || sd === "Physik") {
+                            firstPage.drawText('7',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                        }
+                        if (sd === "Informatik") {
+                            firstPage.drawText('8',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                        }
+                    }
+                }
+                if (s === "Mathematik"){
+                    firstPage.drawText('9',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && (faecher11_0_5[1] === "Geschichte" || faecher11_0_5[1] === "Geografie" || faecher11_0_5[1] === "Wirtschaftswissenschaften" || faecher11_0_5[1] === "Politikwissenschaften" || faecher11_0_5[1] === "Philosophie")) && ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && (faecher11_0_5[0] === "Geschichte" || faecher11_0_5[0] === "Geografie" || faecher11_0_5[0] === "Wirtschaftswissenschaften" || faecher11_0_5[0] === "Politikwissenschaften" || faecher11_0_5[0] === "Philosophie"))) {
+            console.log("Zeile10-12")
+
+            if (faecher11_0_5[3] === "Chemie" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                firstPage.drawText('10',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[3] === "Informatik" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                firstPage.drawText('11',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('12',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[2] === "Chemie" || faecher11_0_5[2] === "Biologie" || faecher11_0_5[2] === "Physik") {
+                    firstPage.drawText('10',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[2] === "Informatik") {
+                    firstPage.drawText('11',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('12',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Chemie" || faecher11_0_5[4] === "Biologie" || faecher11_0_5[4] === "Physik") {
+                    firstPage.drawText('10',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Informatik") {
+                    firstPage.drawText('11',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('12',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && faecher11_0_5[1] === "Mathematik") || ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && faecher11_0_5[0] === "Mathematik")) {
+            console.log("Zeile13")
+            firstPage.drawText('13',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+        }
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && (faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik")) || ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && (faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik"))) {
+            console.log("Zeile14-15")
+
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('14',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('15',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('14',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('15',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('14',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('15',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Englisch" || faecher11_0_5[0] === "Spanisch") && faecher11_0_5[1] === "Informatik") || ((faecher11_0_5[1] === "Englisch" || faecher11_0_5[1] === "Spanisch") && faecher11_0_5[0] === "Informatik")) {
+            console.log("Zeile16-17")
+
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('16',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('17',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('16',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('17',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('16',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('17',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Mathematik" && faecher11_0_5[1] === "Deutsch") || (faecher11_0_5[1] === "Mathematik" && faecher11_0_5[0] === "Deutsch")) {
+            console.log("Zeile21")
+            firstPage.drawText('21',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+        }
+        if ((faecher11_0_5[0] === "Mathematik" && (faecher11_0_5[1] === "BildendeKunst" || faecher11_0_5[1] === "Musik")) || (faecher11_0_5[1] === "Mathematik" && (faecher11_0_5[0] === "BildendeKunst" || faecher11_0_5[0] === "Musik"))) {
+            console.log("Zeile22-23")
+
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('22',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein") {
+                firstPage.drawText('23',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('22',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('23',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('22',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('23',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Mathematik" && (faecher11_0_5[1] === "Geschichte" || faecher11_0_5[1] === "Geografie" || faecher11_0_5[1] === "Wirtschaftswissenschaften" || faecher11_0_5[1] === "Politikwissenschaften" || faecher11_0_5[1] === "Philosophie")) && (faecher11_0_5[1] === "Mathematik" && (faecher11_0_5[0] === "Geschichte" || faecher11_0_5[0] === "Geografie" || faecher11_0_5[0] === "Wirtschaftswissenschaften" || faecher11_0_5[0] === "Politikwissenschaften" || faecher11_0_5[0] === "Philosophie"))) {
+            console.log("Zeile24-25")
+
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('24',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein") {
+                firstPage.drawText('25',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('24',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('25',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('24',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('25',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Mathematik" && (faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik")) || (faecher11_0_5[1] === "Mathematik" && (faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik"))) {
+            console.log("Zeile26-27")
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('26',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein") {
+                firstPage.drawText('27',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('26',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('27',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('26',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('27',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Mathematik" && faecher11_0_5[1] === "Informatik") || (faecher11_0_5[1] === "Mathematik" && faecher11_0_5[0] === "Informatik")) {
+            console.log("Zeile28-29")
+            if (faecher11_0_5[2] === "Deutsch") {
+                firstPage.drawText('28',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein") {
+                firstPage.drawText('29',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('28',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('29',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Deutsch") {
+                    firstPage.drawText('28',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('29',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik") && faecher11_0_5[0] === "Deutsch") || ((faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik") && faecher11_0_5[0] === "Deutsch")) {
+            console.log("Zeile32-33")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein") {
+                firstPage.drawText('32',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('33',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('32',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('33',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('32',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('33',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik") && (faecher11_0_5[0] === "BildendeKunst" || faecher11_0_5[0] === "Musik")) || ((faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik") && (faecher11_0_5[1] === "BildendeKunst" || faecher11_0_5[0] === "Musik"))) {
+            console.log("Zeile34-36")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('34',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Mathematik") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('35',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Mathematik" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Mathematik" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('36',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik") && (faecher11_0_5[1] === "Geschichte" || faecher11_0_5[1] === "Geografie" || faecher11_0_5[1] === "Wirtschaftswissenschaften" || faecher11_0_5[1] === "Politikwissenschaften" || faecher11_0_5[1] === "Philosophie")) || ((faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik") && (faecher11_0_5[0] === "Geschichte" || faecher11_0_5[0] === "Geografie" || faecher11_0_5[0] === "Wirtschaftswissenschaften" || faecher11_0_5[0] === "Politikwissenschaften" || faecher11_0_5[0] === "Philosophie"))) {
+            console.log("Zeile37-39")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('37',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Mathematik") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('38',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Mathematik" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Mathematik" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('39',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik") && (faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik"))) {
+            console.log("Zeile40-42")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('40',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Mathematik") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('41',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Mathematik" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Mathematik" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('42',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if (((faecher11_0_5[0] === "Chemie" || faecher11_0_5[0] === "Biologie" || faecher11_0_5[0] === "Physik") && faecher11_0_5[1] === "Informatik") || (faecher11_0_5[1] === "Chemie" || faecher11_0_5[1] === "Biologie" || faecher11_0_5[1] === "Physik") && faecher11_0_5[0] === "Informatik") {
+            console.log("Zeile43-45")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('43',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[2] === "Spanisch" || faecher11_0_5[2] === "Französisch" || faecher11_0_5[2] === "Japanisch" || faecher11_0_5[2] === "Latein" || faecher11_0_5[2] === "Mathematik") {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein" || faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('44',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+            if (faecher11_0_5[2] === "Mathematik" || faecher11_0_5[2] === "Deutsch") {
+                if (faecher11_0_5[3] === "Mathematik" || faecher11_0_5[3] === "Deutsch") {
+                    firstPage.drawText('45',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Deutsch" && (faecher11_0_5[1] === "BildendeKunst" || faecher11_0_5[1] === "Musik")) || (faecher11_0_5[1] === "Deutsch" && (faecher11_0_5[0] === "BildendeKunst" || faecher11_0_5[0] === "Musik"))) {
+            console.log("Zeile49-51")
+            for (let s in faecher11_0_5){
+                if (s === "Englisch" || s === "Spanisch" || s === "Französisch" || s === "Japanisch" || s === "Latein") {
+                    for (let sd in faecher11_0_5){
+                        if (sd === "Chemie" || sd === "Biologie" || sd === "Physik") {
+                            firstPage.drawText('49',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                        }
+                        if (sd === "Informatik") {
+                            firstPage.drawText('50',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                        }
+                    }
+                }
+                if (s === "Mathematik"){
+                    firstPage.drawText('51',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Deutsch" && (faecher11_0_5[1] === "Geschichte" || faecher11_0_5[1] === "Geografie" || faecher11_0_5[1] === "Wirtschaftswissenschaften" || faecher11_0_5[1] === "Politikwissenschaften" || faecher11_0_5[1] === "Philosophie")) || (faecher11_0_5[1] === "Deutsch" && (faecher11_0_5[0] === "Geschichte" || faecher11_0_5[0] === "Geografie" || faecher11_0_5[0] === "Wirtschaftswissenschaften" || faecher11_0_5[0] === "Politikwissenschaften" || faecher11_0_5[0] === "Philosophie"))) {
+            console.log("Zeile52-54")
+            if (faecher11_0_5[3] === "Chemie" || faecher11_0_5[3] === "Biologie" || faecher11_0_5[3] === "Physik") {
+                firstPage.drawText('52',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[3] === "Informatik") {
+                firstPage.drawText('53',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('54',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('52',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[2] === "Informatik") {
+                    firstPage.drawText('53',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('54',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('52',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Informatik") {
+                    firstPage.drawText('53',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('54',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
+        if ((faecher11_0_5[0] === "Deutsch" && faecher11_0_5[1] === "Informatik") || (faecher11_0_5[1] === "Deutsch" && faecher11_0_5[0] === "Informatik")) {
+            console.log("Zeile55-56")
+            if (faecher11_0_5[2] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                firstPage.drawText('55',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (faecher11_0_5[2] === "Mathematik") {
+                firstPage.drawText('56',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                output = true;
+            }
+            if (output === false) {
+                if (faecher11_0_5[3] === "Englisch" || faecher11_0_5[3] === "Spanisch" || faecher11_0_5[3] === "Französisch" || faecher11_0_5[3] === "Japanisch" || faecher11_0_5[3] === "Latein") {
+                    firstPage.drawText('55',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+                if (faecher11_0_5[3] === "Mathematik") {
+                    firstPage.drawText('56',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                    output = true;
+                }
+            }
+            if (output === false) {
+                if (faecher11_0_5[4] === "Englisch" || faecher11_0_5[4] === "Spanisch" || faecher11_0_5[4] === "Französisch" || faecher11_0_5[4] === "Japanisch" || faecher11_0_5[4] === "Latein") {
+                    firstPage.drawText('55',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+                if (faecher11_0_5[4] === "Mathematik") {
+                    firstPage.drawText('56',{x: 265,y: 795,size: 20,font: helveticaFont,color: rgb(0, 0, 0),})
+                }
+            }
+        }
         
+        // --------------------------------------------------------------------------------------------------------------------
         
+        // --------------------------------------------------------------------------------------------------------------------
         
         if (regel_alle === true) {
             
