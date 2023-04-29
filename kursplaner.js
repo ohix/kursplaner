@@ -973,13 +973,18 @@ inputFinishedButton.addEventListener('click', function() {
     // ------------------
     // Regel 17...
 
-    if ((faecher11.length === 10) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
-        regel17 = true;
+    let noSpTh11all = 0;
+    for (let s of faecher11) {
+        if (s !== "SportTheorie") {
+            noSpTh11all++;
+        }
     }
-    if ((faecher11.length === 11) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
-        regel17 = true;
+    if (noSpTh11all === faecher11.length){
+        if ((faecher11.length === 10) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
+            regel17 = true;
+        }
     }
-    if ((faecher11.length === 12) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
+    if ((faecher11.length === 11 || faecher11.length === 12) && (faecher12.length == 10 || faecher12.length == 11|| faecher12.length == 12)) {
         regel17 = true;
     }
 
