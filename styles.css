@@ -41,11 +41,38 @@ body {
     border: 1rem;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     margin-right: 1.5rem;
     font-size: 0.7rem;
     cursor: not-allowed;
 }
+
+.CopyPaste {
+    margin-top: 0.5rem;
+}
+
+#copy-first, #copy-second{
+    background-color: #CF6679;
+    border: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    margin-left: 0.1rem;
+    margin-right: 1.5rem;
+    width: 5.84rem;
+}
+
+#copy-first:hover, #copy-second:hover {
+    background-color: #aa3b53;
+}   
+
+#copy-first:active, #copy-second:active {
+    background-color: #591d2a;
+}
+
+/* #copyyy{
+    width: 6rem;
+} */
 
 /* -------------------------------------------------- */
 
@@ -166,7 +193,7 @@ body {
 
 #remove-btn:hover, #clear-btn:hover, #clear-All:hover {
     background-color: #aa3b53;
-}
+}   
 
 #remove-btn:active, #clear-btn:active, #clear-All:active {
     background-color: #591d2a;

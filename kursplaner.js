@@ -98,11 +98,11 @@ function displayArray(faecherarray) {
     console.log(faecherarray);
     if (faecherarray === faecher11) {
         const arrayDisplay11 = document.getElementById('array-display11');
-        arrayDisplay11.textContent = faecherarray;
+        arrayDisplay11.textContent = faecher11.join(', ');
     }
     if (faecherarray === faecher12) {
         const arrayDisplay12 = document.getElementById('array-display12');
-        arrayDisplay12.textContent = faecherarray;
+        arrayDisplay12.textContent = faecher12.join(', ');
     }
 }
 
@@ -257,7 +257,101 @@ clearAll.addEventListener('click', function() {
     
     // User feedback entfernen
     clearLogs();
+    // Kopieren und Einfügen neustarten
+    CopyPasteReset();
 });
+
+// Kopieren und Einfügen
+let firstCopied = false;
+let secondCopied = false;
+
+function CopyPasteReset() {
+    firstCopied = false;
+    secondCopied = false;
+    document.getElementById("copy-first").innerHTML = "Kopieren 11";
+    document.getElementById("copy-second").innerHTML = "Kopieren 12";
+}
+
+const copyfirst = document.getElementById('copy-first');
+copyfirst.addEventListener('click', function(){
+    copyFirst();
+})
+
+function copyFirst() {
+    if (!firstCopied && !secondCopied) {
+        // Copy first array
+        firstCopied = true;
+        document.getElementById("copy-first").innerHTML = "Abbrechen";
+        document.getElementById("copy-second").innerHTML = "Einfügen";
+
+        setTimeout(function() {
+            CopyPasteReset();
+        }, 10000);
+
+    }else if (secondCopied){
+        // Wenn Zweites kopiert und dann auf Erstes einfügen geklickt
+        faecher11.length = 0;
+        for (let i = 0; i < faecher12.length; i++) {
+            faecher11[i] = faecher12[i];
+        }
+        displayArray(faecher11);
+        displayArrayLength(faecher11,"array-length11");
+        displayArray(faecher12);
+        displayArrayLength(faecher12,"array-length12");
+        clearLogs();
+
+        secondCopied = false;
+        document.getElementById("copy-first").innerHTML = "Kopieren 11";
+        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+
+    } else {
+        // Cancel copying first array
+        firstCopied = false;
+        document.getElementById("copy-first").innerHTML = "Kopieren 11";
+        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+    }
+}
+
+const copysecond = document.getElementById('copy-second');
+copysecond.addEventListener('click', function(){
+    copySecond();
+})
+
+function copySecond() {
+    if (!secondCopied && !firstCopied) {
+        // Copy second array
+        secondCopied = true;
+        document.getElementById("copy-first").innerHTML = "Einfügen";
+        document.getElementById("copy-second").innerHTML = "Abbrechen";
+
+        setTimeout(function() {
+            CopyPasteReset();
+        }, 10000);
+
+    }else if (firstCopied){
+        // Wenn Erstes Kopiert und dann auf Eweites Einfügen geklickt
+        faecher12.length = 0;
+        for (let i = 0; i < faecher11.length; i++) {
+            faecher12[i] = faecher11[i];
+        }
+        displayArray(faecher11);
+        displayArrayLength(faecher11,"array-length11");
+        displayArray(faecher12);
+        displayArrayLength(faecher12,"array-length12");
+        clearLogs();
+
+        firstCopied = false;
+        document.getElementById("copy-first").innerHTML = "Kopieren 11";
+        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+
+    } else {
+        // Cancel copying second array
+        secondCopied = false;
+        document.getElementById("copy-first").innerHTML = "Kopieren 11";
+        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+    }
+}
+
 
 // remove last element of array
 // const removeBtn = document.getElementById('remove-btn');
