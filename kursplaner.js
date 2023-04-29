@@ -116,7 +116,7 @@ function clearLogs() {
     consoleOutputResult.innerHTML = "";
 }
 
-// Versuch Eingabe für 11. Klasse
+// Eingabe für 11. Klasse
 year11.addEventListener('click', function() {
     year12.disabled = false;
     buttons.forEach(button => {
@@ -136,6 +136,7 @@ year11.addEventListener('click', function() {
         
     });
     
+    // Alle 11. Klasse löschen
     clearBtn.addEventListener('click', function() {
         if (activeArray11 === true && activeArray12 === false) {
             clearArray(faecher11);
@@ -188,7 +189,7 @@ removeBtn.addEventListener('click', function() {
 });
 //----------------------------------------------------------------------------------------
 
-// Versuch Eingabe für 12. Klasse
+// Eingabe für 12. Klasse
 year12.addEventListener('click', function() {
     year11.disabled = false;
     buttons.forEach(button => {
@@ -208,7 +209,7 @@ year12.addEventListener('click', function() {
     });
     
     
-    //clear elements of array
+    // Alle 12. Klasse löschen
     clearBtn.addEventListener('click', function() {
         if (activeArray11 === false && activeArray12 === true) {
             clearArray(faecher12);
@@ -261,6 +262,19 @@ clearAll.addEventListener('click', function() {
     CopyPasteReset();
 });
 
+function ButtonsReset() {
+    buttons.forEach(button => {
+        // activate all buttons
+        button.disabled = false;
+        // disable buttons for input 11
+        buttons.forEach(button => {
+            if (faecher11.includes(button.dataset.subject)) {
+                button.disabled = true;
+            }
+        });            
+    });
+}
+
 // Kopieren und Einfügen
 let firstCopied = false;
 let secondCopied = false;
@@ -299,6 +313,7 @@ function copyFirst() {
         displayArray(faecher12);
         displayArrayLength(faecher12,"array-length12");
         clearLogs();
+        ButtonsReset();
 
         secondCopied = false;
         document.getElementById("copy-first").innerHTML = "Kopieren 11";
@@ -339,6 +354,7 @@ function copySecond() {
         displayArray(faecher12);
         displayArrayLength(faecher12,"array-length12");
         clearLogs();
+        ButtonsReset();
 
         firstCopied = false;
         document.getElementById("copy-first").innerHTML = "Kopieren 11";
