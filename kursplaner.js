@@ -279,11 +279,13 @@ function ButtonsReset() {
 let firstCopied = false;
 let secondCopied = false;
 
+let CopyPasteTimerReset = false;
 function CopyPasteReset() {
     firstCopied = false;
     secondCopied = false;
     document.getElementById("copy-first").innerHTML = "Kopieren 11";
     document.getElementById("copy-second").innerHTML = "Kopieren 12";
+    CopyPasteTimerReset = false;
 }
 
 const copyfirst = document.getElementById('copy-first');
@@ -298,9 +300,12 @@ function copyFirst() {
         document.getElementById("copy-first").innerHTML = "Abbrechen";
         document.getElementById("copy-second").innerHTML = "Einfügen";
 
-        setTimeout(function() {
-            CopyPasteReset();
-        }, 10000);
+        if (CopyPasteTimerReset === false) {
+            CopyPasteTimerReset = true;
+            setTimeout(function() {
+                CopyPasteReset();
+            }, 10000);
+        }
 
     }else if (secondCopied){
         // Wenn Zweites kopiert und dann auf Erstes einfügen geklickt
