@@ -283,8 +283,8 @@ let CopyPasteTimerReset = false;
 function CopyPasteReset() {
     firstCopied = false;
     secondCopied = false;
-    document.getElementById("copy-first").innerHTML = "Kopieren 11";
-    document.getElementById("copy-second").innerHTML = "Kopieren 12";
+    document.getElementById("copy-first").innerHTML = "Kopieren v. 11";
+    document.getElementById("copy-second").innerHTML = "Kopieren v. 12";
     CopyPasteTimerReset = false;
 }
 
@@ -298,7 +298,7 @@ function copyFirst() {
         // Copy first array
         firstCopied = true;
         document.getElementById("copy-first").innerHTML = "Abbrechen";
-        document.getElementById("copy-second").innerHTML = "Einfügen";
+        document.getElementById("copy-second").innerHTML = "Einfügen in 12";
 
         if (CopyPasteTimerReset === false) {
             CopyPasteTimerReset = true;
@@ -320,15 +320,11 @@ function copyFirst() {
         clearLogs();
         ButtonsReset();
 
-        secondCopied = false;
-        document.getElementById("copy-first").innerHTML = "Kopieren 11";
-        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+        CopyPasteReset();
 
     } else {
         // Cancel copying first array
-        firstCopied = false;
-        document.getElementById("copy-first").innerHTML = "Kopieren 11";
-        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+        CopyPasteReset();
     }
 }
 
@@ -341,7 +337,7 @@ function copySecond() {
     if (!secondCopied && !firstCopied) {
         // Copy second array
         secondCopied = true;
-        document.getElementById("copy-first").innerHTML = "Einfügen";
+        document.getElementById("copy-first").innerHTML = "Einfügen in 11";
         document.getElementById("copy-second").innerHTML = "Abbrechen";
 
         setTimeout(function() {
@@ -361,15 +357,11 @@ function copySecond() {
         clearLogs();
         ButtonsReset();
 
-        firstCopied = false;
-        document.getElementById("copy-first").innerHTML = "Kopieren 11";
-        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+        CopyPasteReset();
 
     } else {
         // Cancel copying second array
-        secondCopied = false;
-        document.getElementById("copy-first").innerHTML = "Kopieren 11";
-        document.getElementById("copy-second").innerHTML = "Kopieren 12";
+        CopyPasteReset();
     }
 }
 
