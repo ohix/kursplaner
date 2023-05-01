@@ -260,6 +260,20 @@ clearAll.addEventListener('click', function() {
     clearLogs();
     // Kopieren und Einfügen neustarten
     CopyPasteReset();
+
+    // URL auf Standart zurücksetzten
+    // Extrahieren Sie den Teil der URL vor dem Query-Parameter "selection"
+    var url = window.location.href;
+    var queryString = window.location.search;
+    var params = new URLSearchParams(queryString);
+    if (params.has('selection')) {
+        var selectionIndex = url.indexOf('?selection');
+        var urlBeforeSelection = url.substring(0, selectionIndex);
+
+        // Geben Sie den Teil der URL vor "selection" in der Konsole aus
+        console.log(urlBeforeSelection);
+        window.location.href = urlBeforeSelection;
+    }
 });
 
 function ButtonsReset() {
@@ -365,6 +379,110 @@ function copySecond() {
     }
 }
 
+//--------------------------------------------------------------------------------------------------
+
+function getSelectionArrays(url) {
+    // Get the selection query parameter from the URL
+    var queryString = url.split('?')[1];
+    var selectionParam = queryString.match(/selection=(.*)/)[1];
+
+    // Split the selection parameter into two arrays
+    var selectionArrays = selectionParam.split('&');
+    var array1 = selectionArrays[0].split(',');
+    var array2 = selectionArrays[1].split(',');
+
+    // Return the two arrays
+    return [array1, array2];
+}
+
+const inputSaveButton = document.getElementById('input-saved');
+inputSaveButton.addEventListener('click', function() {
+    if (faecher11.length != 0 && faecher12.length != 0) {
+        // var url = "http://127.0.0.1:5500/main/?selection=" + faecher11 + "&" + faecher12;
+        // var url = "http://127.0.0.1:5500/?selection=" + faecher11 + "&" + faecher12;
+
+
+
+        // Extrahieren Sie den Teil der URL vor dem Query-Parameter "selection"
+        var urlx = window.location.href;
+        var queryString = window.location.search;
+        var params = new URLSearchParams(queryString);
+        if (params.has('selection')) {
+            var selectionIndex = urlx.indexOf('?selection');
+            var urlBeforeSelection = urlx.substring(0, selectionIndex);
+
+            // Geben Sie den Teil der URL vor "selection" in der Konsole aus
+            console.log(urlBeforeSelection);
+        }else{
+            urlBeforeSelection = window.location.search;
+        }
+        var url = urlBeforeSelection + "?selection=" + faecher11 + "&" + faecher12;
+
+        // console.log(url);
+        // var arrays = getSelectionArrays(url);
+        // console.log(arrays[0]); // ['Mathematik', 'Informatik', 'Biologie']
+        // console.log(arrays[1]); // ['Chemie', 'Physik', 'Englisch', 'Japanisch']
+        // arrays [0] = faecher11;
+        // arrays [1] = faecher12;
+        window.location.href = url; // Redirect the user to the new URL
+    }
+});
+
+// Definieren Sie eine Funktion, die ausgeführt wird, wenn die Grundseite geladen wird
+function onPageLoad() {
+    // console.log("Die Grundseite wurde geladen");
+    var queryString = window.location.search;
+    var params = new URLSearchParams(queryString);
+    
+    // Überprüfen Sie, ob der Query-Parameter "selection" vorhanden ist
+    if (params.has('selection')) {
+        
+        var selectionParam = queryString.match(/selection=(.*)/)[1];
+        
+        // Split the selection parameter into two arrays
+        var selectionArrays = selectionParam.split('&');
+        var array1 = selectionArrays[0].split(',');
+        var array2 = selectionArrays[1].split(',');
+        
+        faecher11.length = 0;
+        for (let i = 0; i < array1.length; i++) {
+            faecher11[i] = array1[i];
+        }
+        faecher12.length = 0;
+        for (let i = 0; i < array2.length; i++) {
+            faecher12[i] = array2[i];
+        }
+        
+        displayArray(faecher11);
+        displayArrayLength(faecher11,"array-length11");
+        displayArray(faecher12);
+        displayArrayLength(faecher12,"array-length12");
+        clearLogs();
+        ButtonsReset();
+        CopyPasteReset();
+        
+        // //-------
+        
+        // // Extrahieren Sie den Teil der URL vor dem Query-Parameter "selection"
+        // var url = window.location.href;
+        // var params = new URLSearchParams(queryString);
+        // if (params.has('selection')) {
+        //     var selectionIndex = url.indexOf('?selection');
+        //     var urlBeforeSelection = url.substring(0, selectionIndex);
+
+        //     // Geben Sie den Teil der URL vor "selection" in der Konsole aus
+        //     console.log(urlBeforeSelection);
+        //     window.location.href = urlBeforeSelection;
+        // }
+    }
+}
+
+// Registrieren Sie den onPageLoad-Handler für das DOMContentLoaded-Ereignis
+document.addEventListener("DOMContentLoaded", onPageLoad);
+
+
+
+//--------------------------------------------------------------------------------------------------
 
 // remove last element of array
 // const removeBtn = document.getElementById('remove-btn');
