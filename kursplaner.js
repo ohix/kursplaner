@@ -36,6 +36,8 @@ let faecher11_0_5 = [];
 export const faecher12 = [];
 let faecher12_0_5 = [];
 
+export let regel_alle = false;
+
 const buttons = document.querySelectorAll('.subject-button');
 const inputFinishedButton = document.getElementById('input-finished');
 
@@ -133,7 +135,7 @@ year11.addEventListener('click', function() {
             }
         });
         year11.disabled = true;
-        
+        regel_alle = false;
     });
     
     // Alle 11. Klasse löschen
@@ -146,6 +148,7 @@ year11.addEventListener('click', function() {
             displayArrayLength(faecher11,"array-length11");            
             // User feedback entfernen
             clearLogs();
+            regel_alle = false;
         }
     });
 });
@@ -169,6 +172,7 @@ removeBtn.addEventListener('click', function() {
         
         // User feedback entfernen
         clearLogs();
+        regel_alle = false;
     }else{
         faecher12.pop();
         console.log(faecher12);
@@ -185,6 +189,7 @@ removeBtn.addEventListener('click', function() {
         
         // User feedback entfernen
         clearLogs();
+        regel_alle = false;
     }
 });
 //----------------------------------------------------------------------------------------
@@ -206,6 +211,7 @@ year12.addEventListener('click', function() {
             }
         });
         year12.disabled = true;
+        regel_alle = false;
     });
     
     
@@ -220,6 +226,7 @@ year12.addEventListener('click', function() {
             
             // User feedback entfernen
             clearLogs();
+            regel_alle = false;
         }
     });
 });
@@ -274,6 +281,7 @@ clearAll.addEventListener('click', function() {
         console.log(urlBeforeSelection);
         window.location.href = urlBeforeSelection;
     }
+    regel_alle = false;
 });
 
 function ButtonsReset() {
@@ -335,7 +343,7 @@ function copyFirst() {
         ButtonsReset();
 
         CopyPasteReset();
-
+        regel_alle = false;
     } else {
         // Cancel copying first array
         CopyPasteReset();
@@ -359,7 +367,7 @@ function copySecond() {
         }, 10000);
 
     }else if (firstCopied){
-        // Wenn Erstes Kopiert und dann auf Eweites Einfügen geklickt
+        // Wenn Erstes Kopiert und dann auf Zweites Einfügen geklickt
         faecher12.length = 0;
         for (let i = 0; i < faecher11.length; i++) {
             faecher12[i] = faecher11[i];
@@ -372,7 +380,7 @@ function copySecond() {
         ButtonsReset();
 
         CopyPasteReset();
-
+        regel_alle = false;
     } else {
         // Cancel copying second array
         CopyPasteReset();
@@ -566,7 +574,7 @@ document.addEventListener("DOMContentLoaded", onPageLoad);
 
 
 
-export let regel_alle = false;
+
 
 //.---------------------------------------------------------------------------------------
 
