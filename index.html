@@ -12,8 +12,8 @@
 </head>
 <body>
     
-    <h1>Kursplaner - Wähle deine Kurse!</h1>
-    <p>Wähle die Fächer in folgender Reihenfolge: LF1 | LF2 | 3.PF | 4.PF | 5.PK | weitere ...</p>
+    <h1>Kursplaner<br>Wähle deine Kurse!</h1>
+    <p>Wähle die Fächer in folgender Reihenfolge:<br>LF1 | LF2 | 3.PF | 4.PF | 5.PK | weitere ...</p>
     <div class="jahreswahl">
         <h4>Eingabe des Kursjahres</h4>
         <button id="year11">Q1/Q2</button>
@@ -73,17 +73,21 @@
         <div id="array-display12" ></div>
     </div>
     
-    <div class="eingabeBearbeitung">
-        <h4>Eingabe bearbeiten</h4>
-        <!-- new button to indicate when input is finished -->
-        
-        <button id="input-finished">✅</button>
-        <button id="input-saved">URL 📎</button>
-        <button id="pdf">PDF 📄📝</button>
-        <button id="remove-btn">↩️</button>
-        <button id="clear-btn">Kursjahr 🗑️</button>
-        <button id="clear-All">Neustart 🔁 </button>
-        <p></p>
+    <div class="Eingabe">
+        <div class="EingabeBestaetigen">
+            <h4>Eingabe bearbeiten</h4>
+            <!-- new button to indicate when input is finished -->
+            
+            <button id="input-finished">✅</button>
+            <button id="input-saved">URL 📎</button>
+            <button id="pdf">PDF 📄📝</button>
+        </div>
+        <div class="EingabeBearbeiten">
+            <button id="remove-btn">↩️</button>
+            <button id="clear-btn">Kursjahr 🗑️</button>
+            <button id="clear-All">Neustart 🔁 </button>
+            <p></p>
+        </div>
     </div>
     
     <div class="feedback">

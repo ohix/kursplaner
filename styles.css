@@ -10,6 +10,14 @@ body {
     max-width: 40rem;
 }
 
+h1 {
+    text-align: center; /* This centers the text horizontally */
+}
+
+p {
+    text-align: center;
+}
+
 /* -------------------------------------------------- */
 
 
@@ -23,11 +31,25 @@ body {
     margin-bottom: 1rem;
 }
 
-#year11:active, #year12:active {
-    background-color: #BB86FC;
+#year11, #year12 {
+    background-color: #3700B3;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: inline-block;
+    font-size: 0.7rem;
+    margin: 0.2rem 0.1rem;
+    /* cursor: pointer; */
+    border-radius: 0.4rem;
 }
+
 #year11:hover, #year12:hover {
     background-color: #6200EE;
+}
+
+#year11:active, #year12:active {
+    background-color: #8c4ae7;
 }
 
 #year11:disabled, #year12:disabled {
@@ -36,14 +58,13 @@ body {
     cursor: not-allowed;
 }
 
-
 #array-length11, #array-length12 {
     background-color: #7843f4;
     border: 1rem;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
     /* margin-bottom: 1rem; */
-    margin-right: 1.5rem;
+    margin-right: 2rem;
     font-size: 0.7rem;
     cursor: not-allowed;
 }
@@ -54,13 +75,14 @@ body {
 
 #copy-first, #copy-second{
     background-color: #CF6679;
+    color: white;
     border: 1rem;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
     font-size: 0.6rem;
     margin-left: 0.1rem;
-    margin-right: 1.5rem;
-    width: 5.84rem;
+    margin-right: 1.99rem;
+    width: 6.84rem;
 }
 
 #copy-first:hover, #copy-second:hover {
@@ -86,7 +108,7 @@ body {
     margin-bottom: 1rem;
 } 
 
-.subject-button, #year11, #year12 {
+.subject-button {
     background-color: #3700B3;
     border: none;
     color: white;
@@ -99,7 +121,7 @@ body {
     border-radius: 0.4rem;
 }
 
-#year11:active, #year12:active {
+/* #year11:active, #year12:active {
     background-color: #BB86FC;
 }
 #year11:hover, #year12:hover {
@@ -110,7 +132,7 @@ body {
     background-color: #BB86FC;
     opacity: 0.6;
     cursor: not-allowed;
-}
+} */
 
 .subject-button:active {
     background-color: #BB86FC;
@@ -144,8 +166,9 @@ body {
 
 /* -------------------------------------------------- */
 
-.eingabeBearbeitung {
+.Eingabe {
     background-color: #1F1F1F;
+    color: white;
     border: 1rem;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
@@ -153,44 +176,26 @@ body {
     margin-right: 0.2rem;
 } 
 
-#input-finished, #input-saved {
+#input-finished, #input-saved, #pdf {
     background-color: #03DAC6;
     color: white;
     border: 1rem; 
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
     margin-right: 0.2rem;
-    font-size: 0.7rem;
-    
+    font-size: 0.7rem;    
 }
 
-#input-saved:hover {
+#input-finished:hover, #input-saved:hover, #pdf:hover{
     background-color: #21708f;
 }
 
-#input-saved:active {
-    background-color: #16485b;
-}
-
-#pdf {
-    background-color: #03DAC6;
-    color: white;
-    border: 1rem; 
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-    margin-right: 1rem;
-    font-size: 0.7rem;
-}
-
-#input-finished:hover,#pdf:hover{
-    background-color: #21708f;
-}
-
-#input-finished:active,#pdf:active{
+#input-finished:active,#input-saved:active, #pdf:active {
     background-color: #16485b;
 }
 
 #remove-btn, #clear-btn, #clear-All {
+    margin-top: 0.5rem;
     background-color: #CF6679;
     border: none;
     color: white;
@@ -198,6 +203,9 @@ body {
     font-size: 0.7rem;
     margin-right: 0.2rem;
     border-radius: 0.4rem;
+}
+#remove-btn {
+    display: inline;
 }
 
 #remove-btn:hover, #clear-btn:hover, #clear-All:hover {
