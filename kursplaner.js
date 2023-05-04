@@ -381,18 +381,28 @@ function copySecond() {
 
 //--------------------------------------------------------------------------------------------------
 
-function getSelectionArrays(url) {
-    // Get the selection query parameter from the URL
-    var queryString = url.split('?')[1];
-    var selectionParam = queryString.match(/selection=(.*)/)[1];
+// function getSelectionArrays(url) {
+//     // Get the selection query parameter from the URL
+//     var queryString = url.split('?')[1];
+//     var selectionParam = queryString.match(/selection=(.*)/)[1];
 
-    // Split the selection parameter into two arrays
-    var selectionArrays = selectionParam.split('&');
-    var array1 = selectionArrays[0].split(',');
-    var array2 = selectionArrays[1].split(',');
+//     // Split the selection parameter into two arrays
+//     var selectionArrays = selectionParam.split('&');
+//     var array1 = selectionArrays[0].split(',');
+//     var array2 = selectionArrays[1].split(',');
 
-    // Return the two arrays
-    return [array1, array2];
+//     // Return the two arrays
+//     return [array1, array2];
+// }
+
+// copy url for user
+function copyToClipboard(text) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
 }
 
 const inputSaveButton = document.getElementById('input-saved');
@@ -424,6 +434,7 @@ inputSaveButton.addEventListener('click', function() {
         // console.log(arrays[1]); // ['Chemie', 'Physik', 'Englisch', 'Japanisch']
         // arrays [0] = faecher11;
         // arrays [1] = faecher12;
+        copyToClipboard(url); // copy url for user
         window.location.href = url; // Redirect the user to the new URL
     }
 });
