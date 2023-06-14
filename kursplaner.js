@@ -453,7 +453,7 @@ function InfoHilfe() {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 2 weitere Grundkurse"
         }
         if (faecher11.length == 10 && !faecher11.includes("SportTheorie")) {
-            document.getElementById("Info_Hilfe").innerHTML = text1 + "Du düftest einen weiteren Grundkurs wählen oder <br> Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4"
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4 oder <br> Du düftest einen weiteren Grundkurs wählen"
         }else if (faecher11.length == 10 && faecher11.includes("SportTheorie")){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 1 weiteren Grundkurs"
         }
@@ -462,6 +462,9 @@ function InfoHilfe() {
         }
         if (faecher11.length == 12) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4"
+        }
+        if (faecher11.length >= 13){
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Du hast zu viele Kurse. Wähle weniger Kurse"
         }
     }
     if (activeArray12 === true) {
@@ -496,7 +499,7 @@ function InfoHilfe() {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 1 weiteren Grundkurs"
         }
         if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 10) || (faecher12.length == 10 && faecher11.length == 11)) {
-            document.getElementById("Info_Hilfe").innerHTML = text1 + "Du düftest einen weiteren Grundkurs wählen oder <br> Prüfe nun deine Eingabe"
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe nun deine Eingabe oder <br> Du düftest einen weiteren Grundkurs wählen"
         }else if (faecher12.length == 10){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Du düftest einen weiteren Grundkurs wählen oder <br> Kopiere deine Kurse nach Q1/Q2 oder <br> Wähle deine Kurse für Q1/Q2"
         }
@@ -509,6 +512,9 @@ function InfoHilfe() {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe jetzt deine Eingabe"
         }else if (faecher12.length == 12){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q1/Q2 oder <br> Wähle deine Kurse für Q1/Q2"
+        }
+        if (faecher12.length >= 13){
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Du hast zu viele Kurse. Wähle weniger Kurse"
         }
     }
 }
