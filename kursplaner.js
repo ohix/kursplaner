@@ -390,7 +390,7 @@ function copySecond() {
         displayArrayLength(faecher12,"array-length12");
         clearLogs();
         ButtonsReset();
-
+        InfoHilfe();
         CopyPasteReset();
         regel_alle = false;
     } else {
@@ -448,19 +448,25 @@ function InfoHilfe() {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 3 weitere Grundkurse"
         }
         if (faecher11.length == 9 && !faecher11.includes("SportTheorie")) {
-            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 1 weiteren Grundkurs"
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens einen weiteren Grundkurs"
         }else if (faecher11.length == 9 && faecher11.includes("SportTheorie")){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 2 weitere Grundkurse"
         }
-        if (faecher11.length == 10 && !faecher11.includes("SportTheorie")) {
+        if (faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length >= 10) {
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe nun deine Eingabe oder <br> Du düftest einen weiteren Grundkurs wählen"  
+        }else if (faecher11.length == 10 && !faecher11.includes("SportTheorie")) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4 oder <br> Du düftest einen weiteren Grundkurs wählen"
         }else if (faecher11.length == 10 && faecher11.includes("SportTheorie")){
-            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 1 weiteren Grundkurs"
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens einen weiteren Grundkurs"
         }
-        if (faecher11.length == 11) {
+        if (faecher11.length == 11 && faecher12.length >= 10) {
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe nun deine Eingabe oder <br> Du düftest einen weiteren Grundkurs wählen"
+        }else if (faecher11.length == 11) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4"
         }
-        if (faecher11.length == 12) {
+        if (faecher11.length == 12 && faecher12.length >= 10) {
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe nun deine Eingabe"
+        }else if (faecher11.length == 12) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q3/Q4 oder <br> Wähle deine Kurse für Q3/Q4"
         }
         if (faecher11.length >= 13){
@@ -496,19 +502,19 @@ function InfoHilfe() {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 2 weitere Grundkurse"
         }
         if (faecher12.length == 9) {
-            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens 1 weiteren Grundkurs"
+            document.getElementById("Info_Hilfe").innerHTML = text1 + "Wähle mindestens einen weiteren Grundkurs"
         }
-        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 10) || (faecher12.length == 10 && faecher11.length == 11)) {
+        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 10) || (faecher11.length == 11 && faecher12.length == 10) || (faecher11.length == 12 && faecher12.length == 10)) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe nun deine Eingabe oder <br> Du düftest einen weiteren Grundkurs wählen"
         }else if (faecher12.length == 10){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Du düftest einen weiteren Grundkurs wählen oder <br> Kopiere deine Kurse nach Q1/Q2 oder <br> Wähle deine Kurse für Q1/Q2"
         }
-        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 11) || (faecher11.length == 11 && faecher12.length == 11)) {
+        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 11) || (faecher11.length == 11 && faecher12.length == 11) || (faecher11.length == 12 && faecher12.length == 11)) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe jetzt deine Eingabe"
         }else if (faecher12.length == 11){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q1/Q2 oder <br> Wähle deine Kurse für Q1/Q2"
         }
-        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 12) || (faecher11.length == 11 && faecher12.length == 12)) {
+        if ((faecher11.length == 10 && !faecher11.includes("SportTheorie") && faecher12.length == 12) || (faecher11.length == 11 && faecher12.length == 12) | (faecher11.length == 12 && faecher12.length == 12)) {
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Prüfe jetzt deine Eingabe"
         }else if (faecher12.length == 12){
             document.getElementById("Info_Hilfe").innerHTML = text1 + "Kopiere deine Kurse nach Q1/Q2 oder <br> Wähle deine Kurse für Q1/Q2"
